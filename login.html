@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teste BootStrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>teste BootStrap</title>
 </head>
+
 <body>
 
-    <nav class="navbar bg-black">
-        <div class="container">
-          <a class="navbar-brand text-light" href="index.html">
-            <img src="./Layout-imgs/logoEdit.jpeg" alt="Bootstrap" width="40" height="40">
-            Grife Chic
-          </a>
-        </div>
-      </nav>
+  <nav class="navbar bg-black">
+    <div class="container">
+      <a class="navbar-brand text-light" href="index.html">
+        <img src="./Layout-imgs/logoEdit.jpeg" alt="Bootstrap" width="40" height="40">
+        Grife Chic
+      </a>
+    </div>
+  </nav>
 
 
-<!-- Area de login -->
-<div class="container position-absolute top-50 start-50 translate-middle" style="max-width: 300px;">
+  <!-- Area de login -->
+  <div class="container position-absolute top-50 start-50 translate-middle" style="max-width: 300px;">
 
     <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-
-        <button type="submit" class="btn btn-dark">Login</button>
-      </form>
-      <div class="container position-relative">
-        <a href=""><button type="button" class="btn btn-link position-absolute end-0">Criar uma conta</button></a>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input type="email" class="form-control loginEmail" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
-      
-</div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control loginPassword" id="exampleInputPassword1">
+      </div>
+
+      <button type="button" class="btn btn-dark loginBtn" id="loginBtn">Login</button>
+    </form>
+    <div class="container position-relative">
+      <a href="cadastro.html"><button type="button" class="btn btn-link position-absolute end-0">Criar uma
+          conta</button></a>
+    </div>
+
+  </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script type="module" src="login.js"></script>
 </body>
+
 </html>

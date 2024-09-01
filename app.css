@@ -1,0 +1,9 @@
+.whats-ico{
+    animation: beating .5s infinite;
+}
+
+@keyframes beating{
+    to{
+        scale: 1.1;
+    }
+}

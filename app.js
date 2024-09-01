@@ -1,7 +1,136 @@
-// const navBar = document.querySelector('.collapse navbar-collapse')
-// const navBtn = document.querySelector('.navbar-toggler')
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"
+import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"
 
-// navBtn.addEventListener('click',(e)=>{
-//     e.classList.remove('collapse')
-//     alert('oi')
-// })
+const firebaseConfig = {
+  apiKey: "AIzaSyA5OgFn-7QRpthDJcz32GmHcBOLDDqtx6Y",
+  authDomain: "teste-com-firebase-c28bd.firebaseapp.com",
+  projectId: "teste-com-firebase-c28bd",
+  storageBucket: "teste-com-firebase-c28bd.appspot.com",
+  messagingSenderId: "379473818522",
+  appId: "1:379473818522:web:18a3c607f112447dc08023"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app)
+const db = getFirestore(app);
+
+// //Creation Forms
+// const creationEmail = document.querySelector('#creationEmail')
+// const creationName = document.querySelector('#creationName')
+// const creationTel = document.querySelector('#creationTel')
+// const creationPassword = document.querySelector('#creationPassword')
+// const creationBtn = document.querySelector('#creationBtn')
+
+// //Login forms
+// const loginEmail = document.querySelector('.loginEmail')
+// const loginPassword = document.querySelector('.loginPassword')
+// const loginBtn = document.querySelector('.loginBtn')
+
+// //logout btn
+// const logoutBtn = document.querySelector('#logoutBtn')
+
+// //user Info
+// const userName = document.querySelector('.userName')
+// const userTel = document.querySelector('.userTel')
+// const userEmail = document.querySelector('.userEmail')
+
+//--------------------------------------------------------------------------------
+
+// //Criar Usuário
+// const createNewUser = () => {
+//   let email = creationEmail.value;
+//   let password = creationPassword.value;
+//   let nomeUser = creationName.value
+//   let telUser = creationTel.value
+//   createUserWithEmailAndPassword(auth, email, password)
+//     .then((userCredential) => {
+//       // Signed in
+//       const user = userCredential.user;
+
+//       //dados usuário
+
+//       setDoc(doc(db, "users", user.uid), {
+//         nome: nomeUser,
+//         tel: telUser,
+//         userEmail: email,
+//       });
+
+
+
+//       alert('Usuario Criado com sucesso')
+//       //...
+//       // ...
+
+//     })
+//     .catch((error) => {
+//       const errorCode = error.code;
+//       const errorMessage = error.message;
+//       alert(errorMessage)
+//       // ..
+//     });
+// }
+// creationBtn.addEventListener('click', createNewUser)
+// //Criar Usuário
+const loginBtn = document.querySelector('.loginBtn-index')
+const logOutBtn = document.querySelector('.logOutBtn')
+const usuarioLogado = document.querySelector('.usuario-logado')
+const perfilCliente = document.querySelector('.perfil-cliente')
+
+
+//Enquanto Logado
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
+    const uid = user.uid;
+    console.log(user.email)
+    loginBtn.style.display='none'
+
+
+    // userinfo(user.uid)
+    const unsub = onSnapshot(doc(db, "users", user.uid), (doc) => {
+      console.log("Current data: ", doc.data());
+      const data = doc.data()
+      usuarioLogado.innerHTML=data.nome
+      perfilCliente.innerHTML=data.nome +' '+ data.sobrenome
+    });
+
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    logOutBtn.style.display='none'
+  }
+
+});
+//Enquanto Logado
+
+
+// //logIn
+// const login = () => {
+//   let email = loginEmail.value;
+//   let password = loginPassword.value;
+//   signInWithEmailAndPassword(auth, email, password)
+//     .then((userCredential) => {
+//       // Signed in
+//       const user = userCredential.user;
+//       window.location='./index.html'
+//       // ...
+//     })
+//     .catch((error) => {
+//       const errorCode = error.code;
+//       const errorMessage = error.message;
+//       alert(errorMessage)
+//     });
+// }
+// loginBtn.addEventListener('click', login)
+// //logIn
+
+
+// LogOut
+logOutBtn.addEventListener('click', () => {
+  signOut(auth)
+  location.reload()
+})
+
