@@ -37,41 +37,7 @@ const db = getFirestore(app);
 
 //--------------------------------------------------------------------------------
 
-// //Criar Usuário
-// const createNewUser = () => {
-//   let email = creationEmail.value;
-//   let password = creationPassword.value;
-//   let nomeUser = creationName.value
-//   let telUser = creationTel.value
-//   createUserWithEmailAndPassword(auth, email, password)
-//     .then((userCredential) => {
-//       // Signed in
-//       const user = userCredential.user;
 
-//       //dados usuário
-
-//       setDoc(doc(db, "users", user.uid), {
-//         nome: nomeUser,
-//         tel: telUser,
-//         userEmail: email,
-//       });
-
-
-
-//       alert('Usuario Criado com sucesso')
-//       //...
-//       // ...
-
-//     })
-//     .catch((error) => {
-//       const errorCode = error.code;
-//       const errorMessage = error.message;
-//       alert(errorMessage)
-//       // ..
-//     });
-// }
-// creationBtn.addEventListener('click', createNewUser)
-// //Criar Usuário
 const loginBtn = document.querySelector('.loginBtn-index')
 const logOutBtn = document.querySelector('.logOutBtn')
 const usuarioLogado = document.querySelector('.usuario-logado')
@@ -92,7 +58,7 @@ onAuthStateChanged(auth, (user) => {
     const unsub = onSnapshot(doc(db, "users", user.uid), (doc) => {
       console.log("Current data: ", doc.data());
       const data = doc.data()
-      usuarioLogado.innerHTML=data.nome
+      usuarioLogado.innerHTML=`Olá ${data.nome}`
       perfilCliente.innerHTML=data.nome +' '+ data.sobrenome
     });
 
