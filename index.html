@@ -11,97 +11,105 @@
 </head>
 
 <body>
-  
+
   <!-- Nav -->
-    <div class="position-sticky top-0 start-0 z-1">
-      <nav class="navbar bg-black">
-        <div class="container-fluid">
-          <a class="navbar-brand text-light" href="#">
-            <img src="./Layout-imgs/logoEdit.jpeg" alt="Logo" width="40" height="40"
-              class="d-inline-block align-text-center">
-            Grife Chic
-          </a>
-          <div>
-            <a href="./login.html"><button type="button" class="btn btn-dark">Login</button></a>
+  <div class="position-sticky top-0 start-0 z-1">
+    <nav class="navbar bg-black">
+      <div class="container-fluid">
+        <a class="navbar-brand text-light" href="#">
+          <img src="./Layout-imgs/logoEdit.jpeg" alt="Logo" width="40" height="40"
+            class="d-inline-block align-text-center">
+          Grife Chic
+        </a>
+        <div>
+          <a href="./login.html"><button type="button" class="btn btn-dark">Login</button></a>
+        </div>
+
+      </div>
+    </nav>
+
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+
+        <div class="navbar-brand">Moda Masculina</div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Grife Chic</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Camisetas Nacionais</a>
+              </li>
           </div>
 
-        </div>
-      </nav>
 
-      <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
+          <div class="links-contato container d-flex flex-column align-items-end">
 
-          <div class="navbar-brand">Moda Masculina</div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Grife Chic</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Camisetas Nacionais</a>
-                </li>
-              </ul>
-            </div>
+            <a href="#">
+              <i class="fa-brands fa-whatsapp text-dark fs-1 mb-2 mt-2"></i>
+            </a>
+
+            <a href="#">
+              <i class="fa-brands fa-instagram text-dark fs-1 mb-2 mt-2"></i>
+            </a>
+
           </div>
-        </div>
-      </nav>
-    </div>
 
-    <!-- Nav -->
+          <div class="container perfil-cliente mb-2 mt-2">
+            Jefferson Portela
+          </div>
 
-
-    <!-- Area de Itens -->
-    <div class="container">
-      <div class="card mb-4 mt-4">
-        <img src="./Layout-imgs/Camiseta1.jpg" class="card-img-top" alt="...">
-
-        <div class="card-body">
-          <h5 class="card-title">Camisa Cavalera</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <p class="fs-6 fw-bold">R$ 59.99</p>
-          <a href="#" class="btn btn-secondary">Adicionar à sacola</a>
+          <div class="container mb-3">
+            <a class="nav-link text-danger" href="#">Sair</a>
+          </div>
         </div>
       </div>
-      <!-- <div class="card" aria-hidden="true">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title placeholder-glow">
-      <span class="placeholder col-6"></span>
-    </h5>
-    <p class="card-text placeholder-glow">
-      <span class="placeholder col-7"></span>
-      <span class="placeholder col-4"></span>
-      <span class="placeholder col-4"></span>
-      <span class="placeholder col-6"></span>
-      <span class="placeholder col-8"></span>
-    </p>
-    <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
+    </nav>
   </div>
-</div> -->
 
+
+
+
+  <!-- Nav -->
+
+  <!-- Area de Itens -->
+
+  <!-- <div class="container">
+    <div class="card mb-4 mt-4">
+      <img src="./Layout-imgs/Camiseta1.jpg" class="card-img-top" alt="...">
+
+      <div class="card-body">
+        <h5 class="card-title">Camisa Cavalera</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <p class="fs-6 fw-bold">R$ 59.99</p>
+        <a href="#" class="btn btn-secondary">Adicionar à sacola</a>
+      </div>
     </div>
+  </div> -->
 
 
-    <!-- Area de Itens -->
-
-
-
-
+  <!-- Area de Itens -->
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"></script>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
