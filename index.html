@@ -14,7 +14,7 @@
 <body>
 
   <!-- Nav -->
-  <div class="position-sticky top-0 start-0 z-1">
+  <div class="position-sticky top-0 start-0 z-2">
     <nav class="navbar bg-black">
       <div class="container-fluid">
         <a class="navbar-brand text-light" href="#">
@@ -72,7 +72,7 @@
           </div>
 
           <div class="perfil-cliente container mb-2 mt-2 text-primary">
-            
+
           </div>
 
           <div class="container mb-3">
@@ -82,28 +82,73 @@
       </div>
     </nav>
   </div>
-
-
-
-
   <!-- Nav -->
 
-  <!-- Area de Itens -->
-
-  <div class="container">
-    <div class="card mb-4 mt-4">
-      <img src="./Layout-imgs/Camiseta1.jpg" class="card-img-top" alt="...">
-
-      <div class="card-body">
-        <h5 class="card-title">Camisa Cavalera</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <p class="fs-6 fw-bold">R$ 59.99</p>
-        <a href="#" class="btn btn-secondary">Adicionar à sacola</a>
+  <!-- carousel -->
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner carousel">
+      <div class="carousel-item active">
+        <img src="./Layout-imgs/carrousel 2.jpeg" class="d-block w-100 carousel-img" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="./Layout-imgs/carrousel 3.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="./Layout-imgs/carrousel 4.jpeg" class="d-block w-100" alt="...">
       </div>
     </div>
   </div>
+  <!-- carousel -->
 
+
+  <!-- social -->
+  <div class="container bg-black d-flex justify-content-around social z-1">
+    <a class="navbar-brand text-light fs-1" href="https://wa.me/5592982134524" target="_blank"><i
+        class="fa-brands fa-whatsapp"></i></a>
+    <a class="navbar-brand text-light fs-1" href="https://www.instagram.com/grifechicmoda/" target="_blank"><i
+        class="fa-brands fa-instagram"></i></a>
+    <a class="navbar-brand text-light fs-1" href="#"><i class="fa-solid fa-phone"></i></a>
+  </div>
+  <!-- social -->
+
+
+  <!-- cards -->
+  <div class="card  camisetas-nacionais mt-3">
+    <img src="./Layout-imgs/Camiseta1.jpg" class="card-img-top" alt="..." style="width: 320; height: 320px; object-fit:cover; object-position: center;">
+    <a href="#" class="btn btn-dark position-relative">Camisetas Nacionais</a>
+  </div>
+
+  <div class="card  camisetas-dryFit">
+    <img src="./Layout-imgs/dryFIt.jpg" class="card-img-top" alt="..." style="width: 320; height: 320px;">
+    <a href="#" class="btn btn-dark position-relative">Camisetas Dry Fit</a>
+  </div>
+
+  <div class="card  camisetas-polo">
+    <img src="./Layout-imgs/polo.jpg" class="card-img-top" alt="..." style="width: 320; height: 320px; object-fit:cover; object-position: center;">
+    <a href="#" class="btn btn-dark position-relative">Camisetas Polo Piquet</a>
+  </div>
+
+  <div class="card  camisetas-importadas-peruanas">
+    <img src="./Layout-imgs/malha peruana.jpg" class="card-img-top" alt="..." style="width: 320; height: 320px; object-fit:cover; object-position: center;">
+    <a href="#" class="btn btn-dark position-relative -">Importadas Malha Peruana</a>
+  </div>
+  <!-- cards -->
+
+  <!-- info-loja -->
+  <div class="container p-0 entrega mt-3">
+    <img src="./Layout-imgs/entrega.jpeg" class="w-100">
+  </div>
+
+  <div class="container p-0 entrega">
+    <img src="./Layout-imgs/troca.jpeg" class="w-100">
+  </div>
+  <!-- info-loja -->
+
+
+
+
+
+  <!-- Area de Itens -->
 
   <!-- Area de Itens -->
 
@@ -116,7 +161,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  
+
   <script type="module" src="app.js"></script>
 </body>
 
