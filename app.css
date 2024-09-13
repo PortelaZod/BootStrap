@@ -2,6 +2,9 @@
     animation: beating .5s infinite;
 }
 
+.beating{
+    animation: beating .5s infinite;
+}
 @keyframes beating{
     to{
         scale: 1.1;
@@ -10,15 +13,4 @@
 
 .usuarioCriado{
     display: none;
-}
-
-.carousel{
-    width: 100%;
-    height: auto;
-    overflow-y: hidden;
-}
-
-.social{
-    position: sticky;
-    top: 122px;
 }
