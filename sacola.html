@@ -85,41 +85,44 @@
     </div>
     <!-- Nav -->
 
-    <table class="table table-hover mt-3">
-        <thead>
-            <tr>
-                <th scope="col"></th>
-                <th scope="col">Item</th>
-                <th scope="col">Preço</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
+    <!-- modelo da tabela do carrinho -->
+    <div class="modelo d-none">
+        <table class="table table-hover mt-3 tabela-sacola">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Item</th>
+                    <th scope="col item-sacola-preco">Preço</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
 
-            <tr class="item-carrinho">
-                <th scope="row"></th>
-                <td><img src="./Layout-imgs/Camiseta1.jpg" style="width: 70px;"></td>
-                <td>R$ 00.00</td>
-                <td><button type="button" class="btn btn-danger remove-btn">Remover</button></td>
-            </tr>
+                <tr class="item-carrinho">
+                    <th scope="row"></th>
+                    <td><img src="./Layout-imgs/Camiseta1.jpg" style="width: 70px;" class="item-sacola-img"></td>
+                    <td class="item-sacola-preco">R$ 00.00</td>
+                    <td><button type="button" class="btn btn-danger remove-btn">Remover</button></td>
+                </tr>
 
-            <tr class="item-carrinho">
-                <th scope="row"></th>
-                <td><img src="./Layout-imgs/Camiseta1.jpg" style="width: 70px;"></td>
-                <td>R$ 00.00</td>
-                <td><button type="button" class="btn btn-danger remove-btn">Remover</button></td>
-            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- modelo da tabela do carrinho -->
 
-        </tbody>
-    </table>
 
+    <!-- area da tabela da sacola -->
+    <div class="area-sacola">
+
+    </div>
+    <!-- area da tabela da sacola -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
     <script type="module" src="app.js"></script>
-    <script src="sacola.js"></script>
+    <script type="module" src="sacola.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="app.css">
+    <script src="https://kit.fontawesome.com/9866312553.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grife Chic | Moda masculina</title>
+</head>
+
+<body>
+
+    <!-- Nav -->
+    <div class="position-sticky top-0 start-0 z-2">
+        <nav class="navbar bg-black">
+            <div class="container-fluid">
+                <a class="navbar-brand text-light" href="#">
+                    <img src="./Layout-imgs/logoEdit.jpeg" alt="Logo" width="40" height="40"
+                        class="d-inline-block align-text-center">
+                    Grife Chic
+                </a>
+
+                <div class="usuario-logado text-light">
+
+                </div>
+
+            </div>
+        </nav>
+
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+
+                <div class="navbar-brand">Moda Masculina</div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Grife Chic</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown pt-2 pb-2">
+                                    <a class=" dropdown-toggle text-dark text-decoration" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Camisetas
+                                    </a>
+
+                                    <ul class="dropdown-menu" style="border: unset;">
+                                        <li>
+                                            <a class="dropdown-item" href="#">Camisetas Nacionais</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Camisetas importadas malha Peruana</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Camisetas importadas malha Egípcia</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Camisetas importadas fio 40.1</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </li>
+
+                            <li class="nav-item">
+                                <div class="dropdown pt-2 pb-2">
+                                    <a class=" dropdown-toggle text-dark text-decoration" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        Bermudas & Shorts
+                                    </a>
+
+                                    <ul class="dropdown-menu" style="border: unset;">
+                                        <li>
+                                            <a class="dropdown-item" href="#">Bermudas Jeans</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Bermudas Sarja</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Shorts Sarja</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Shorts Tactel Premium</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Moda Plus Size</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Moda Intima</a>
+                            </li>
+                    </div>
+
+
+                    <div class="links-contato container d-flex flex-column align-items-end">
+
+                        <a href="https://wa.me/5592982134524" target="_blank" class="whats-ico">
+                            <i class="fa-brands fa-whatsapp text-dark fs-1 mb-2 mt-2"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/grifechicmoda/" target="_blank">
+                            <i class="fa-brands fa-instagram text-dark fs-1 mb-2 mt-2"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="">
+                        <a href="./login.html"><button type="button"
+                                class="btn btn-dark loginBtn-index ms-3">Login</button></a>
+                    </div>
+
+                    <div class="perfil-cliente container mb-2 mt-2 text-primary">
+
+                    </div>
+
+                    <div class="container mb-3">
+                        <a class="nav-link text-danger logOutBtn" href="#">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Nav -->
+
+
+    <!-- item placeholders -->
+    <div class="modelos d-none">
+
+        <!-- <div class="card mt-3 mb-3 m-auto item-placeholder" style="max-width: 320px;" id="item-placeholder-modelo">
+            <img src="./Layout-imgs/Camiseta1.jpg" class="card-img-top item-img" alt="...">
+
+            <div class="card-body">
+                <h5 class="card-title item-nome">Nome Item</h5>
+                <p class="card-text item-preco">R$ 00.00</p>
+                <button class="btn btn-secondary botao-add">Adicionar à sacola </button>
+            </div>
+        </div> -->
+
+        <div class="card mt-3 mb-3 itemPlaceholder">
+            <img src="" class="card-img-top item-img" alt="...">
+          
+            <div class="card-body">
+              <h5 class="card-title item-nome"></h5>
+              <p class="card-text item-preco">00</p>
+              <input class="btn btn-secondary addBtn2" type="button" value="Adiciona à Sacola">
+            </div>
+          </div>
+          
+          <div class="card sumir" aria-hidden="false" onload="">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title placeholder-glow">
+                <span class="placeholder col-6"></span>
+              </h5>
+              <p class="card-text placeholder-glow">
+                <span class="placeholder col-7"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-8"></span>
+              </p>
+              <a class="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+            </div>
+          </div>
+    </div>
+
+
+    <div class="itens-area">
+
+    </div>
+
+
+    <!-- item placeholders -->
+
+
+
+
+    <!-- icon-sacola -->
+    <div class="icone-sacola btn position-fixed bottom-0 end-0 beating">
+        <a href="./sacola.html"><i class="fa-solid fa-bag-shopping text-danger" style="font-size: 3rem;"></i></a>
+    </div>
+    <!-- icon-sacola -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script type="module" src="app.js"></script>
+    <script type="module" src="modas.js"></script>
+</body>
+
+</html>
