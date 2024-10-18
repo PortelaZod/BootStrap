@@ -1,5 +1,10 @@
+window.addEventListener('load', ()=>{
+    document.querySelector('.card-oculto').style.display = 'none'
+    document.querySelector('.itens-area').style.display = 'unset'
+} )
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-import { getFirestore, doc, setDoc, onSnapshot, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"
+import { getFirestore, collection, getDocs} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"
 
 const firebaseConfig = {
     apiKey: "AIzaSyA5OgFn-7QRpthDJcz32GmHcBOLDDqtx6Y",
@@ -14,17 +19,15 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 
+
 const querySnapshot = await getDocs(collection(db, "GrifeChic"));
 querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data()}`);
     const item = doc.data()
     const itemPlaceholder = document.querySelector('.itemPlaceholder').cloneNode(true)
     const itemArea = document.querySelector('.itens-area').append(itemPlaceholder)
     itemPlaceholder.querySelector('.item-img').src = item.src
     itemPlaceholder.querySelector('.item-nome').innerHTML = item.nome
     itemPlaceholder.querySelector('.item-preco').innerHTML = `R$ ${item.preco}`
-
-
 
 });
 
@@ -34,16 +37,37 @@ const addSacolaBtn = document.querySelectorAll('.addBtn2')
 for (let i = 0; i < addSacolaBtn.length; i++) {
 
     const element = addSacolaBtn[i];
-    element.addEventListener('click',()=>{
+    element.addEventListener('click', () => {
         const itemNome = element.parentElement.parentElement.querySelector('.item-nome').innerText
         const itemPreco = element.parentElement.parentElement.querySelector('.item-preco').innerText
         const itemImg = element.parentElement.parentElement.querySelector('.item-img').src
-        const docRef = addDoc(collection(db, "sacola"), {
-          nome: itemNome,
-          preco: itemPreco,
-          img: itemImg
-        });
-        alert('Adicionado')
+        let qtd = 1
+
+       let item = {
+            nome: itemNome,
+            preco: itemPreco,
+            img: itemImg,
+            qtd: qtd
+        }
+
+        alert('Item adicionado')
+        addSacola(item)
+
     })
-    
+
+};
+
+
+let sacola = []
+const addSacola = (x) => {
+
+    if (localStorage.arrItens) {
+        sacola = JSON.parse(localStorage.getItem('arrItens'))
+    }
+
+    let novoItem = x 
+    sacola.push(novoItem)
+    localStorage.arrItens = JSON.stringify(sacola)
+    //função que adiciona os itens no localStorage para ser resgatados na página da Sacola.
 }
+

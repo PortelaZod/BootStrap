@@ -50,53 +50,28 @@ onAuthStateChanged(auth, (user) => {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/auth.user
     const uid = user.uid;
-    console.log(user.email)
     loginBtn.style.display='none'
-
 
     // userinfo(user.uid)
     const unsub = onSnapshot(doc(db, "users", user.uid), (doc) => {
-      console.log("Current data: ", doc.data());
       const data = doc.data()
       usuarioLogado.innerHTML=`Olá ${data.nome}`
       perfilCliente.innerHTML=data.nome +' '+ data.sobrenome
     });
-
     // ...
   } else {
     // User is signed out
     // ...
+    
     logOutBtn.style.display='none'
+
   }
 
 });
 //Enquanto Logado
-
-
-// //logIn
-// const login = () => {
-//   let email = loginEmail.value;
-//   let password = loginPassword.value;
-//   signInWithEmailAndPassword(auth, email, password)
-//     .then((userCredential) => {
-//       // Signed in
-//       const user = userCredential.user;
-//       window.location='./index.html'
-//       // ...
-//     })
-//     .catch((error) => {
-//       const errorCode = error.code;
-//       const errorMessage = error.message;
-//       alert(errorMessage)
-//     });
-// }
-// loginBtn.addEventListener('click', login)
-// //logIn
-
 
 // LogOut
 logOutBtn.addEventListener('click', () => {
   signOut(auth)
   location.reload()
 })
-

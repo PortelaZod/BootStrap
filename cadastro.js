@@ -60,10 +60,11 @@ const createNewUser = () => {
         cep: cep,
       });
 
+
       //pós Criado
       formulariosDeCriacao.style.display='none'
       usuarioCriado.style.display='flex'
-      console.log('criado')
+      console.log('Usuário criado com sucesso.')
       //...
       // ...
 

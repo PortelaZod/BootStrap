@@ -1,31 +1,60 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-import { getFirestore, doc,collection, getDocs,deleteDoc,addDoc } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"
 
-const firebaseConfig = {
-    apiKey: "AIzaSyA5OgFn-7QRpthDJcz32GmHcBOLDDqtx6Y",
-    authDomain: "teste-com-firebase-c28bd.firebaseapp.com",
-    projectId: "teste-com-firebase-c28bd",
-    storageBucket: "teste-com-firebase-c28bd.appspot.com",
-    messagingSenderId: "379473818522",
-    appId: "1:379473818522:web:18a3c607f112447dc08023"
-};
+window.onload = ()=>{
+    document.querySelector('.card-oculto').style.display = 'none'
+    document.querySelector('.area-sacola').style.display = 'unset'
+} 
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+let itens = JSON.parse(localStorage.getItem('arrItens'))
 
+if(itens == ''){
+    document.querySelector('.areaValor').style.visibility ='hidden'
+    document.querySelector('.vazio').style.display='flex'
+    document.querySelector('.vazio p').innerHTML = 'Nenhum item adicionado'
+    
+}else{
+    itens.forEach(e => {
 
-
-
-// const removerItem = (e) => {
-//     await deleteDoc(doc(db, "sacola", ''));
-// }
-
-
-const querySnapshot = await getDocs(collection(db, "sacola"));
-querySnapshot.forEach((doc) => {
-    const item = doc.data()
-    const tabelasacola = document.querySelector('.tabela-sacola').cloneNode(true)
-    const areaSacola = document.querySelector('.area-sacola').appendChild(tabelasacola)
-    tabelasacola.querySelector('.item-sacola-img').src = item.img
-    tabelasacola.querySelector('.item-sacola-preco').innerHTML = item.preco
-});
+        let itemCardSacola = document.querySelector('.item-card-sacola').cloneNode(true)
+        const areaSacola = document.querySelector('.area-sacola').append(itemCardSacola)
+        itemCardSacola.querySelector('.item-img-sacola').src = e.img
+        itemCardSacola.querySelector('.item-nome-sacola').innerText = e.nome
+        itemCardSacola.querySelector('.item-preco-sacola').innerHTML = e.preco
+        itemCardSacola.querySelector('.item-qtd-sacola').value = e.qtd
+    
+        //atualizar valor de quantidade do item
+        let qtdInput = itemCardSacola.querySelector('.item-qtd-sacola')
+        qtdInput.addEventListener('blur', () => {
+            e.qtd = qtdInput.value
+            let arrFilter = itens.filter(item=> item != e)
+            arrFilter.push(e)
+            localStorage.arrItens = JSON.stringify(arrFilter)
+            location.reload()
+        })
+        //atualizar valor de quantidade do item
+    
+    
+        //remover item Sacola
+        itemCardSacola.querySelector('.item-remover-sacola').addEventListener('click', () => {
+            let arrFilter = itens.filter(item=> item != e)
+            localStorage.arrItens = JSON.stringify(arrFilter)
+            location.reload()
+        })
+        //remover item Sacola
+    
+    });
+    
+    
+    
+    //valor soma total dos Itens na Sacola
+    let total = []
+    let valores = JSON.parse(localStorage.getItem('arrItens'))
+    valores.forEach(e => {
+    
+        total.push(e.preco.replace('R$','') *e.qtd);
+        let somatotal = total.reduce((i, o) => i + o)
+        let areaValorTotal = document.querySelector('.valor-total').innerHTML = `Total (${total.length} Itens) R$ ${somatotal.toFixed(2)}`;
+    });
+    //valor soma total dos Itens na Sacola
+    
+    
+}

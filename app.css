@@ -18,3 +18,46 @@
 .text-decoration{
     text-decoration: none;
 }
+
+.dp-none{
+    display: none;
+}
+
+.valor-total{
+display:flex;
+    align-items: center;
+}
+
+.cardMaxValues{
+    max-width: 320px;
+    max-height: 426px;
+    margin: auto;
+}
+
+.cardOcultoMaxValues{
+    max-width: 320px;
+    max-height: fit-content;
+    margin: auto;
+}
+
+.cardSacolaMaxValues{
+    max-width: 320px;
+    max-height: fit-content;
+    margin: auto;
+}
+
+.imgCardMaxValues{
+    width: 318px;
+    height: 318px;
+    object-fit: cover;
+}
+
+.vazio{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    display: none;
+}

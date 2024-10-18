@@ -140,17 +140,12 @@
   <div class="modelo d-none">
 
     <div class="tabela-sacola">
-      <div class="card item-card-sacola mt-3 mb-3 cardSacolaMaxValues">
-        <img src="./Layout-imgs/Camiseta1.jpg" class="card-img-top item-img-sacola imgCardMaxValues" alt="..."
-          style="object-fit: cover; object-position: center;">
-
+      <div class="card item-card-sacola mt-3 mb-3">
+        <img src="./Layout-imgs/Camiseta1.jpg" class="card-img-top item-img-sacola" alt="..." style="object-fit: cover; object-position: center;">
+      
         <div class="card-body m-auto d-flex flex-column align-items-center">
           <h5 class="card-title item-nome-sacola"></h5>
-          <p class="card-text item-preco-sacola"></p>
-          <div class="mb-3" style="text-align: center;">
-            <input type="number" class="form-control w-25 m-auto item-qtd-sacola" style="text-align: center;"
-              id="form-quantidade" maxlength="2" value="1">
-          </div>
+          <p class="card-text item-preco-sacola">0</p>
           <a href="#" class="btn btn-danger w-100 item-remover-sacola">Remover</a>
         </div>
       </div>
@@ -159,33 +154,12 @@
   </div>
 
 
-  <div class="area-sacola" style="display: none;">
-    <div class="vazio">
-      <p></p>
-    </div>
-  </div>
+  <div class="area-sacola">
 
-  <div class="card card-oculto" aria-hidden="true">
-    <img src="" class="card-img-top" alt="" style="background-color: rgb(134, 142, 150); height: 318px;">
-    <div class="card-body">
-      <h5 class="card-title placeholder-glow">
-        <span class="placeholder col-6"></span>
-      </h5>
-      <p class="card-text placeholder-glow">
-        <span class="placeholder col-7"></span>
-        <span class="placeholder col-4"></span>
-        <span class="placeholder col-4"></span>
-        <span class="placeholder col-6"></span>
-        <span class="placeholder col-8"></span>
-      </p>
-      <a class="btn btn-danger disabled placeholder col-6" aria-disabled="true"></a>
-    </div>
+    
   </div>
-
-  <div class="card position-sticky bottom-0 d-flex flex-row justify-content-around areaValor">
-    <div></div>
-    <div class="valor-total"></div>
-    <button class="btn btn-primary w-25 " type="button">Enviar pedido</button>
+  
+  <div class="valor-total position-fixed bottom-0">
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -193,7 +167,7 @@
     crossorigin="anonymous"></script>
 
   <script type="module" src="app.js"></script>
-  <script src="sacola.js"></script>
+  <script src="sacola2.js"></script>
 </body>
 
 </html>
