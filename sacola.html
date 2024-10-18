@@ -17,7 +17,7 @@
   <div class="position-sticky top-0 start-0 z-2">
     <nav class="navbar bg-black">
       <div class="container-fluid">
-        <a class="navbar-brand text-light" href="#">
+        <a class="navbar-brand text-light" href="index.html">
           <img src="./Layout-imgs/logoEdit.jpeg" alt="Logo" width="40" height="40"
             class="d-inline-block align-text-center">
           Grife Chic
@@ -160,12 +160,13 @@
 
 
   <div class="area-sacola" style="display: none;">
+    <div></div>
     <div class="vazio">
       <p></p>
     </div>
   </div>
 
-  <div class="card card-oculto" aria-hidden="true">
+  <div class="card card-oculto cardOcultoMaxValues" aria-hidden="true">
     <img src="" class="card-img-top" alt="" style="background-color: rgb(134, 142, 150); height: 318px;">
     <div class="card-body">
       <h5 class="card-title placeholder-glow">
@@ -182,10 +183,9 @@
     </div>
   </div>
 
-  <div class="card position-sticky bottom-0 d-flex flex-row justify-content-around areaValor">
-    <div></div>
+  <div class="card position-sticky bottom-0 flex-row justify-content-around areaValor">
     <div class="valor-total"></div>
-    <button class="btn btn-primary w-25 " type="button">Enviar pedido</button>
+    <button class="btn btn-primary w-25 p-0 enviarPedido" type="button">Finalizar Pedido</button>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -193,7 +193,7 @@
     crossorigin="anonymous"></script>
 
   <script type="module" src="app.js"></script>
-  <script src="sacola.js"></script>
+  <script  type="module" src="sacola.js"></script>
 </body>
 
 </html>

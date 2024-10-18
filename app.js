@@ -15,28 +15,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
 const db = getFirestore(app);
 
-// //Creation Forms
-// const creationEmail = document.querySelector('#creationEmail')
-// const creationName = document.querySelector('#creationName')
-// const creationTel = document.querySelector('#creationTel')
-// const creationPassword = document.querySelector('#creationPassword')
-// const creationBtn = document.querySelector('#creationBtn')
-
-// //Login forms
-// const loginEmail = document.querySelector('.loginEmail')
-// const loginPassword = document.querySelector('.loginPassword')
-// const loginBtn = document.querySelector('.loginBtn')
-
-// //logout btn
-// const logoutBtn = document.querySelector('#logoutBtn')
-
-// //user Info
-// const userName = document.querySelector('.userName')
-// const userTel = document.querySelector('.userTel')
-// const userEmail = document.querySelector('.userEmail')
-
-//--------------------------------------------------------------------------------
-
 
 const loginBtn = document.querySelector('.loginBtn-index')
 const logOutBtn = document.querySelector('.logOutBtn')

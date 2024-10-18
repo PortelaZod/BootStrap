@@ -24,7 +24,7 @@
 }
 
 .valor-total{
-display:flex;
+    display:flex;
     align-items: center;
 }
 
@@ -60,4 +60,12 @@ display:flex;
     justify-content: space-around;
     height: 100vh;
     display: none;
+}
+
+.areaValor{
+    visibility: hidden;
+}
+
+.card-oculto{
+    display: flex;
 }
