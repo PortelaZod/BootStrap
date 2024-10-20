@@ -67,8 +67,6 @@ onAuthStateChanged(auth, (user) => {
     } else {
       // User is signed out
       // ...
-      
-  
     }
   
   });
