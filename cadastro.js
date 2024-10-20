@@ -22,6 +22,7 @@ const sobrenomeCadastro = document.querySelector('.sobrenomeCadastro')
 const telCadastro = document.querySelector('.telCadastro')
 const emailCadastro = document.querySelector('.emailCadastro')
 const passwordCadastro = document.querySelector('.passwordCadastro')
+const passwordCadastroRpt = document.querySelector('.passwordCadastroRpt')
 const enderecoCadastro = document.querySelector('.enderecoCadastro')
 const bairroCadastro = document.querySelector('.bairroCadastro')
 const cepCadastro = document.querySelector('.cepCadastro')
@@ -53,7 +54,7 @@ const createNewUser = () => {
       setDoc(doc(db, "users", user.uid), {
         nome: nome,
         sobrenome: sobrenome,
-        tel: tel,
+        tel: `55${tel}`,
         email: userEmail,
         endereço: endereco,
         bairro: bairro,
@@ -77,5 +78,32 @@ const createNewUser = () => {
       // ..
     });
 }
-btnCadastro.addEventListener('click',createNewUser)
+btnCadastro.addEventListener('click',(e)=>{
+  e.preventDefault()
+  let nome = nomeCadasdro.value;
+  let sobrenome = sobrenomeCadastro.value;
+  let tel = telCadastro.value;
+  let userEmail = emailCadastro.value;
+  let userpassword = passwordCadastro.value;
+  let userpasswordRpt = passwordCadastroRpt.value;
+  let endereco = enderecoCadastro.value;
+  let bairro = bairroCadastro.value;
+  let cep = cepCadastro.value;
+
+  if(nome == ''){
+    alert('Campo Obrigatório Nome Vazio');
+  }else if(tel == ''){
+    alert('Telefone Obrigatório para o cadastro')
+  }  else if(tel.length <11){
+    alert('Telefone Precisa do Cod de Area exemplo : 92')
+  }else if(tel.length >11){
+    alert('Telefone incorreto')
+  }else if(userpassword !== userpasswordRpt){
+    alert('As senhas digitadas não conferem')
+  }else{
+  createNewUser()
+  }
+
+})
 //Criar Usuário
+
