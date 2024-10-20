@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="app.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produtos</title>
+</head>
+
+<body>
+    <div class="form-item" style="display: flex; flex-direction: column;gap: 5px; width: 300px; margin: auto;">
+
+        <h1 style="text-align: center;font-family: Arial, Helvetica, sans-serif;">Cadastro de Item</h1>
+
+        <input class="inputs" type="text" placeholder="Cod. barras" maxlength="13" id="barcod">
+
+        <input class="inputs" type="text" id="nome" placeholder="Nome do item a ser mostrado na pagina ">
+
+        <label for="Grade">Grade</label>
+        <select id="grade" class="inputs">
+            <option value="P">P</option>
+            <option value="M">M</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
+            <option value="G1">G1</option>
+            <option value="G2">G2</option>
+            <option value="G3">G3</option>
+            <option value="38">38</option>
+            <option value="42">42</option>
+            <option value="44">44</option>
+            <option value="48">48</option>
+            <option value="50">50</option>
+            <option value="52">52</option>
+        </select>
+
+        <input class="inputs" type="number" placeholder="Valor unitário (R$)" id="preco">
+
+        <input class="inputs" type="number" placeholder="Quantidade estoque" id="quantidade">
+
+        <input class="inputs" type="text" placeholder="URL IMG" id="img">
+
+        <label for="colecao">Coleção</label>
+        <select id="colecao" class="inputs">
+            <option value="NACIONAL">NACIONAL</option>
+            <option value="MALHA_PERUANA">MALHA PERUANA</option>
+            <option value="MALHA_EGIPCIA">MALHA EGÍPCIA</option>
+            <option value="FIO_40.1">FIO 40.1</option>
+            <option value="BERMUDAS_JEANS">BERMUDAS JEANS</option>
+            <option value="BERMUDAS_SARJA">BERMUDAS SARJA</option>
+            <option value="SHORT_SARJA">SHORT SARJA</option>
+            <option value="SHORT_TACTEL_PREMIUM">SHORTS TACTEL PREMIUM</option>
+            <option value="PLUS_SIZE">PLUS SIZE</option>
+            <option value="INTIMA">INTIMA</option>
+
+        </select>
+
+        <button class="inputs" id="btn">Adicionar Item</button>
+
+    </div>
+
+
+    <script type="module" src="additem.js"></script>
+</body>
+
+</html>

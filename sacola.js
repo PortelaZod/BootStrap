@@ -19,18 +19,19 @@ const db = getFirestore(app);
 
 window.onload = ()=>{
     document.querySelector('.card-oculto').style.display = 'none'
-    document.querySelector('.area-sacola').style.display = 'unset'
-    document.querySelector('.areaValor').style.visibility ='visible'
 } 
 
 let itens = JSON.parse(localStorage.getItem('arrItens'))
 
 if(itens == ''){
     document.querySelector('.vazio').style.display='flex'
-    document.querySelector('.vazio p').innerHTML = 'Nenhum item adicionado'
     document.querySelector('.areaValor').style.visibility ='hidden'
     
 }else{
+
+    document.querySelector('.vazio').style.display='none'
+    document.querySelector('.areaValor').style.visibility ='visible'
+    document.querySelector('.area-sacola').style.display = 'unset'
     itens.forEach(e => {
 
         let itemCardSacola = document.querySelector('.item-card-sacola').cloneNode(true)
@@ -59,8 +60,6 @@ if(itens == ''){
             location.reload()
         })
         //remover item Sacola
-    
-        
     });
     
     
