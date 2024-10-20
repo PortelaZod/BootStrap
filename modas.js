@@ -62,7 +62,7 @@ for (let i = 0; i < addSacolaBtn.length; i++) {
         }
 
         toastFunction()
-        // addSacola(item)
+        addSacola(item)
 
     })
 
