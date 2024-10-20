@@ -77,3 +77,8 @@
 .inputs{
     padding: 10px;
 }
+
+.t-oast{
+    visibility: hidden;
+    transition: all 1s;
+}

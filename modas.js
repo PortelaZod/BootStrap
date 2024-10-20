@@ -32,6 +32,17 @@ querySnapshot.forEach((doc) => {
 });
 
 
+let toastFunction = ()=>{
+    let toast = document.querySelector('.t-oast')
+    toast.style.visibility='visible'
+    
+    setTimeout(() => {
+        toast.style.visibility='hidden'
+    }, 1500);
+}
+
+
+
 const addSacolaBtn = document.querySelectorAll('.addBtn2')
 
 for (let i = 0; i < addSacolaBtn.length; i++) {
@@ -50,8 +61,8 @@ for (let i = 0; i < addSacolaBtn.length; i++) {
             qtd: qtd
         }
 
-        alert('Item adicionado')
-        addSacola(item)
+        toastFunction()
+        // addSacola(item)
 
     })
 
@@ -70,4 +81,8 @@ const addSacola = (x) => {
     localStorage.arrItens = JSON.stringify(sacola)
     //função que adiciona os itens no localStorage para ser resgatados na página da Sacola.
 }
+
+
+
+
 
