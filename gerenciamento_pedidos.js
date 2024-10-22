@@ -26,6 +26,15 @@ querySnapshot.forEach(async (doc) => {
     card_pedido.querySelector('.tel-cliente').innerHTML = `Telefone: ${data.tel}`
     card_pedido.querySelector('.endereco').innerHTML = `Endereço: ${data.endereco}`
     card_pedido.querySelector('.valor-pedido').innerHTML = `Total do Pedido: R$ ${data.valor}`
-    card_pedido.querySelector('.qtd_itens').innerHTML = `Quantidade de Itens: ${JSON.parse(data.itens).length}`
-    card_pedido.querySelector('.itens').innerHTML = itens
+    
+    
+    itens.forEach(element => {
+        let {nome,preco,qtd} = element
+        let itens_arr = `${nome} | Valor Unitário:${preco} | Unidades: ${qtd}`
+        let area_itens_pedido_modelo = document.querySelector('.area_itens_pedido_modelo').cloneNode(true)
+        card_pedido.querySelector('.item').append(area_itens_pedido_modelo)
+        area_itens_pedido_modelo.innerHTML = itens_arr
+    });
+
+    
 });

@@ -104,14 +104,15 @@ if (itens == '') {
                     let somaTotal = total.reduce((i, e) => i + e)
                     let all = [InfoCliente, pedido, somaTotal.toFixed(2),numeroPedido]
                     
-                    //whats
+                    // whats
                     const numero = '5592982134524'; // Insira o número do destinatário com o código do país
                     let mensagem = `Olá meu nome é ${InfoCliente.nome} e gostaria de confirmar meu pedido ${numeroPedido}.`; // Mensagem a ser enviada
                     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
                     window.open(url, '_blank');
-                    // //whats
+                    //whats
 
                     enviarPedido(all)
+                    console.log(all)
                 });
 
             } else {
@@ -132,6 +133,7 @@ let enviarPedido = async (e)=>{
         endereco:`${e[0].endereço}, ${e[0].bairro}, ${e[0].cep }`,
         email:e[0].email,
         data:e[0].data,
-        itens:JSON.stringify(e[1])
+        itens:e[1],
+        qtd:e[1].length
       });
 }
