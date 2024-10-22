@@ -98,17 +98,12 @@ if (itens == '') {
                     }
 
                     let pedido = itens
-                    let numeroPedido = Math.floor(Math.random() * 10000) + 1000
+                    let numeroPedido = `${Math.floor(Math.random() * 9999) + 1000}`
                     
                     let total = itens.map(i => parseFloat(i.preco.replace('R$', '')) * i.qtd * 1)
                     let somaTotal = total.reduce((i, e) => i + e)
                     let all = [InfoCliente, pedido, somaTotal.toFixed(2),numeroPedido]
-                    localStorage.pedioall = JSON.stringify(all)
-
-
-
-                    console.log(all)
-
+                    
                     //whats
                     const numero = '5592982134524'; // Insira o número do destinatário com o código do país
                     let mensagem = `Olá meu nome é ${InfoCliente.nome} e gostaria de confirmar meu pedido ${numeroPedido}.`; // Mensagem a ser enviada
@@ -116,6 +111,7 @@ if (itens == '') {
                     window.open(url, '_blank');
                     // //whats
 
+                    enviarPedido(all)
                 });
 
             } else {
@@ -126,3 +122,16 @@ if (itens == '') {
     })
 }
 
+let enviarPedido = async (e)=>{
+
+    await setDoc(doc(db, "PEDIDOS", e[3]), {
+        pedido: e[3],
+        valor: e[2],
+        nome: e[0].nome,
+        tel: e[0].tel,
+        endereco:`${e[0].endereço}, ${e[0].bairro}, ${e[0].cep }`,
+        email:e[0].email,
+        data:e[0].data,
+        itens:JSON.stringify(e[1])
+      });
+}

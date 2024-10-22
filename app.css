@@ -82,3 +82,9 @@
     visibility: hidden;
     transition: all 1s;
 }
+
+.area_pedidos{
+    /* display: grid;
+    grid-template-columns: repeat(2,1fr); */
+    
+}
