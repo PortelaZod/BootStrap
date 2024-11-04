@@ -20,15 +20,16 @@ const db = getFirestore(app);
 
 
 
-const querySnapshot = await getDocs(collection(db, "GrifeChic"));
+const querySnapshot = await getDocs(collection(db, "NACIONAL"));
 querySnapshot.forEach((doc) => {
     const item = doc.data()
     const itemPlaceholder = document.querySelector('.itemPlaceholder').cloneNode(true)
     const itemArea = document.querySelector('.itens-area').append(itemPlaceholder)
-    itemPlaceholder.querySelector('.item-img').src = item.src
+    itemPlaceholder.querySelector('.item-img').src = item.img
     itemPlaceholder.querySelector('.item-nome').innerHTML = item.nome
     itemPlaceholder.querySelector('.item-preco').innerHTML = `R$ ${item.preco}`
-
+    itemPlaceholder.querySelector('.cod_item').innerHTML = `#${item.cod}`
+    itemPlaceholder.querySelector('.tamanho_item').innerText = item.grade
 });
 
 
