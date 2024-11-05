@@ -86,8 +86,51 @@
 .tamanho_item{
     display: flex;
     justify-content: center;
+    flex-direction: row;
     align-items: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 100%;
+    height: 22px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.grades{
+    display: flex;
+    flex-direction: row;
+}
+
+.itens-area{
+    grid-template-columns: repeat(2,1fr);
+    column-gap: .3em;
+    row-gap: .3em;
+    padding: .3em;
+}
+
+.img_modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(2px);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ease .5s;
+    scale: 0;
+}
+
+.zoom{
+    position: absolute;
+    right: 0;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px;
+}
+
+.x img{
+    width: 2em;
+    position: absolute;
+    top: 10%;
+    right: 10%;
 }

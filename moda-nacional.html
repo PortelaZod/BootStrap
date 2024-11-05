@@ -142,87 +142,98 @@
 
     <!-- item placeholders -->
     <div class="modelos d-none">
-        <div class="card mt-3 mb-3 itemPlaceholder cardMaxValues" style="max-width: 320px; max-height: fit-content; margin: auto;">
-            <img src="" class="card-img-top item-img" alt="..." style="width: 318px;height: 318px; object-fit: cover;">
+        <div class="card itemPlaceholder cardMaxValues" style="width: 100%; height: 347px; margin: auto;">
+            <div class="zoom"><img src="./Layout-imgs/Zoom.png" style="width: 24px;"></div>
+            <img src="" class="card-img-top item-img" alt="..." style="width: 100%;height: 165px; object-fit: cover;">
 
             <div class="card-body">
-                <h5 class="card-title item-nome mb-1"></h5>
-                <p class="cod_item fs-6">#0000000000000</p>
-                <p class="card-text item-preco" style="user-select: none;" ></p>
-                <p class="tamanho_item fs-6 bg-light" style="user-select: none;">GG</p>
-                <div class="container" style="display: flex; justify-content: center; align-items: center;"><input class="btn btn-primary addBtn2" type="button" value="Adiciona à Sacola"></div>
-                
+                <p class="card-title item-nome" style="font-size: 16px;height: 42px;"></p>
+                <!-- <p class="cod_item fs-6">#0000000000000</p> -->
+                <p class="card-text item-preco mb-1 fs-6" style="user-select: none;"></p>
+                <div class="grades">
+                    <p class="tamanho_item bg-ligh mb-1 unselct text-dark" style="user-select: none; font-size: 12px;">GG</p>
+                </div>
+                <div class="container" style="display: flex; justify-content: end; align-items: center;"><button
+                        class="btn btn-primary addBtn2" type="button"><i
+                            class="fa-solid fa-bag-shopping text-light fs-5"></i> Sacola</button></div>
+
             </div>
         </div>
-    </div>
 
-    <div class="itens-area" style="display: none;">
         
+    </div>
     <!-- item placeholders -->
 
-    <div class="btn position-fixed bottom-0 right-0 z-2 bg-black p-2 text-light t-oast">Item adicionado</div>
+    <div class="itens-area" style="display: none;">
+
+        <div class="img_modal">
+            <div class="x"><img src="./Layout-imgs/Close.png"></div>
+            <img class="img_zoom" src="./Layout-imgs/Camiseta1.jpg" style="width: 100%;height: fit-content; padding: .5em;">
+        </div>
+
+        <div class="btn position-fixed bottom-0 right-0 z-2 bg-black p-2 text-light t-oast">Item adicionado</div>
     </div>
     <div class="card card-oculto cardOcultoMaxValues" aria-hidden="true">
 
         <div class="card-body">
-          <h5 class="card-title placeholder-glow">
-            <span class="placeholder col-6"></span>
-          </h5>
-          <p class="card-text placeholder-glow">
-            <span class="placeholder col-7"></span>
-            <span class="placeholder col-4"></span>
-            <span class="placeholder col-4"></span>
-            <span class="placeholder col-6"></span>
-            <span class="placeholder col-8"></span>
-          </p>
-          <a class="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
+            <h5 class="card-title placeholder-glow">
+                <span class="placeholder col-6"></span>
+            </h5>
+            <p class="card-text placeholder-glow">
+                <span class="placeholder col-7"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-8"></span>
+            </p>
+            <a class="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
         </div>
 
         <div class="card-body">
             <h5 class="card-title placeholder-glow">
-              <span class="placeholder col-6"></span>
+                <span class="placeholder col-6"></span>
             </h5>
             <p class="card-text placeholder-glow">
-              <span class="placeholder col-7"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-6"></span>
-              <span class="placeholder col-8"></span>
+                <span class="placeholder col-7"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-8"></span>
             </p>
             <a class="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
-          </div>
+        </div>
 
-          <div class="card-body">
+        <div class="card-body">
             <h5 class="card-title placeholder-glow">
-              <span class="placeholder col-6"></span>
+                <span class="placeholder col-6"></span>
             </h5>
             <p class="card-text placeholder-glow">
-              <span class="placeholder col-7"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-6"></span>
-              <span class="placeholder col-8"></span>
+                <span class="placeholder col-7"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-8"></span>
             </p>
             <a class="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
-          </div>
+        </div>
 
-          <div class="card-body">
+        <div class="card-body">
             <h5 class="card-title placeholder-glow">
-              <span class="placeholder col-6"></span>
+                <span class="placeholder col-6"></span>
             </h5>
             <p class="card-text placeholder-glow">
-              <span class="placeholder col-7"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-6"></span>
-              <span class="placeholder col-8"></span>
+                <span class="placeholder col-7"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-8"></span>
             </p>
             <a class="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
-          </div>
+        </div>
 
-      </div>
+    </div>
 
-      
+
 
 
     <!-- icon-sacola -->

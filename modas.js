@@ -1,10 +1,10 @@
-window.addEventListener('load', ()=>{
+window.addEventListener('load', () => {
     document.querySelector('.card-oculto').style.display = 'none'
-    document.querySelector('.itens-area').style.display = 'unset'
-} )
+    document.querySelector('.itens-area').style.display = 'grid'
+})
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-import { getFirestore, collection, getDocs} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"
 
 const firebaseConfig = {
     apiKey: "AIzaSyA5OgFn-7QRpthDJcz32GmHcBOLDDqtx6Y",
@@ -28,17 +28,18 @@ querySnapshot.forEach((doc) => {
     itemPlaceholder.querySelector('.item-img').src = item.img
     itemPlaceholder.querySelector('.item-nome').innerHTML = item.nome
     itemPlaceholder.querySelector('.item-preco').innerHTML = `R$ ${item.preco}`
-    itemPlaceholder.querySelector('.cod_item').innerHTML = `#${item.cod}`
-    itemPlaceholder.querySelector('.tamanho_item').innerText = item.grade
+    // itemPlaceholder.querySelector('.cod_item').innerHTML = `#${item.cod}`
+    let grade = `${item.grade}`
+    itemPlaceholder.querySelector('.tamanho_item').innerText = grade.replace(',',' | ')
 });
 
 
-let toastFunction = ()=>{
+let toastFunction = () => {
     let toast = document.querySelector('.t-oast')
-    toast.style.visibility='visible'
-    
+    toast.style.visibility = 'visible'
+
     setTimeout(() => {
-        toast.style.visibility='hidden'
+        toast.style.visibility = 'hidden'
     }, 1500);
 }
 
@@ -52,10 +53,10 @@ for (let i = 0; i < addSacolaBtn.length; i++) {
     element.addEventListener('click', () => {
         const itemNome = element.parentElement.parentElement.querySelector('.item-nome').innerText
         const itemPreco = element.parentElement.parentElement.querySelector('.item-preco').innerText
-        const itemImg = element.parentElement.parentElement.querySelector('.item-img').src
+        const itemImg = element.parentElement.parentElement.parentElement.querySelector('.item-img').src
         let qtd = 1
 
-       let item = {
+        let item = {
             nome: itemNome,
             preco: itemPreco,
             img: itemImg,
@@ -77,13 +78,33 @@ const addSacola = (x) => {
         sacola = JSON.parse(localStorage.getItem('arrItens'))
     }
 
-    let novoItem = x 
+    let novoItem = x
     sacola.push(novoItem)
     localStorage.arrItens = JSON.stringify(sacola)
     //função que adiciona os itens no localStorage para ser resgatados na página da Sacola.
 }
 
 
+// Efeito Modal nas Imagens
+let imgs = document.querySelectorAll('.item-img')
+imgs.forEach(e =>
+    e.addEventListener('click', () => {
+        // document.querySelector('.img_modal').style.right = '0'
+        document.querySelector('.img_modal').style.scale = '1'
+        document.querySelector('.img_zoom').src = e.src
+    }))
 
+let zoom = document.querySelectorAll('.zoom')
+    zoom.forEach(e =>
+        e.addEventListener('click', () => {
+            document.querySelector('.img_modal').style.scale = '1'
+            document.querySelector('.img_zoom').src = e.parentElement.querySelector('.item-img').src
+    }))
 
-
+let x = document.querySelectorAll('.x')
+    x.forEach(e =>
+        e.addEventListener('click', () => {
+            document.querySelector('.img_modal').style.scale = '0'
+    }))
+// Efeito Modal nas Imagens
+    
