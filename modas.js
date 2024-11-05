@@ -30,7 +30,7 @@ querySnapshot.forEach((doc) => {
     itemPlaceholder.querySelector('.item-preco').innerHTML = `R$ ${item.preco}`
     // itemPlaceholder.querySelector('.cod_item').innerHTML = `#${item.cod}`
     let grade = `${item.grade}`
-    itemPlaceholder.querySelector('.tamanho_item').innerText = grade.replace(',',' | ')
+    itemPlaceholder.querySelector('.tamanho_item').innerHTML = grade.replaceAll(',',' | ')
 });
 
 
