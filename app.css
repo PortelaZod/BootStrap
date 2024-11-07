@@ -130,6 +130,18 @@ img.item-img{
     top: 10%;
     right: 10%;
 }
+
+.item_modal{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -400%;
+    z-index: 3;
+    background-color: white;
+    transition: all .5s;
+}
+
 @media (min-width: 375px){
     img.item-img{
         width: 100%;
