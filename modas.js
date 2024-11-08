@@ -18,20 +18,20 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-    //função que recebe o tamanho do item e direciona pro array sacola
-    const grade1 = (x)=>{
-        console.log(x)
-    }
-    //função que recebe o tamanho do item e direciona pro array sacola
+//obter grade do item
+
+let tamanho_item = ''
+let grade_item = (x)=>{
+    tamanho_item = x
+}
+//obter grade do item
 
 //abre modal que mostra os dados do item clicado
 let item_modal = (x) => {
-    
     document.querySelector('.item_modal').style.left = '0'
     document.querySelector('.item_modal_img').src = x.img
     document.querySelector('.item_modal_nome').innerHTML = x.nome
     document.querySelector('.item_modal_preco').innerHTML = `R$ ${x.preco}`
-
     let gtam = x.grade
 
     //seleção de tamanho do item
@@ -39,9 +39,9 @@ let item_modal = (x) => {
                 let clone_btn = document.querySelector('.modelo_btn').cloneNode(true)
                 document.querySelector('.item_modal_grade').append(clone_btn)
                 clone_btn.querySelector('.btn_grade').value = gtam[element]
+                let a = clone_btn.querySelector('.btn_grade')
                 clone_btn.querySelector('.btn_grade').addEventListener('click',()=>{
-                    let b = gtam[element]
-                    grade_item(b)
+                    grade_item(gtam[element])
                 })
     }//seleção de tamanho do item
 
@@ -53,8 +53,7 @@ let item_modal = (x) => {
 
     //adicionar item na sacola e fechar modal
     let adicionar_item = document.querySelector('.adicionar_item').addEventListener('click',()=>{
-        document.querySelector('.item_modal').style.left = '-400%',
-        document.querySelector('.item_modal_grade').innerHTML = ''
+
         toastFunction()
 
                 let item = {
@@ -62,9 +61,16 @@ let item_modal = (x) => {
                     preco: x.preco,
                     img: x.img,
                     qtd: 1,
+                    grade:gtam[0],
                 }
 
-        // addSacola(item)
+                if(tamanho_item != ''){
+                    item.grade = tamanho_item
+                }
+                console.log(item)
+
+                // addSacola(item)
+        
     })//adicionar item na sacola e fechar modal
 
 }//abre modal que mostra os dados do item clicado
@@ -137,3 +143,5 @@ x.forEach(e =>
         document.querySelector('.img_modal').style.scale = '0'
     }))// fechar zoom Modal nas Imagens
 // Efeito Modal nas Imagens
+
+
