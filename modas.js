@@ -18,6 +18,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+    //função que recebe o tamanho do item e direciona pro array sacola
+    const grade1 = (x)=>{
+        console.log(x)
+    }
+    //função que recebe o tamanho do item e direciona pro array sacola
+
 //abre modal que mostra os dados do item clicado
 let item_modal = (x) => {
     
@@ -33,6 +39,10 @@ let item_modal = (x) => {
                 let clone_btn = document.querySelector('.modelo_btn').cloneNode(true)
                 document.querySelector('.item_modal_grade').append(clone_btn)
                 clone_btn.querySelector('.btn_grade').value = gtam[element]
+                clone_btn.querySelector('.btn_grade').addEventListener('click',()=>{
+                    let b = gtam[element]
+                    grade_item(b)
+                })
     }//seleção de tamanho do item
 
     //fechar modal de item
@@ -54,7 +64,7 @@ let item_modal = (x) => {
                     qtd: 1,
                 }
 
-        addSacola(item)
+        // addSacola(item)
     })//adicionar item na sacola e fechar modal
 
 }//abre modal que mostra os dados do item clicado
