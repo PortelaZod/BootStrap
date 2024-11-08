@@ -162,7 +162,7 @@
             </div>
         </div>
         <div class="modelo_btn">
-            <input class="btn_grade" type="button" value="GG">
+            <input class="btn_grade btn btn-dark mx-1" type="button" value="GG">
         </div>
         
     </div>
@@ -181,12 +181,30 @@
     </div>
 
     <div class="item_modal">
-        <img class="item_modal_img" src="./Layout-imgs/Camiseta1.jpg" style="width: 100%;">
-        <p class="item_modal_nome">Camiseta Cavalera</p>
-        <p class="item_modal_preco">R$00.00</p>
-        <div class="item_modal_grade">
-            
+        <img class="item_modal_img card-img-top" src="./Layout-imgs/Camiseta1.jpg">
+        <div class="card card-body">
+            <p class="item_modal_nome card-title">Camiseta Cavalera</p>
+            <p class="item_modal_preco card-subtitle">R$00.00</p>
+            <div class="item_modal_grade d-flex flex-row justify-content-center">
+
+            </div>
+
+            <div class="row d-flex flex-row justify-content-around">
+                <button class="btn btn-danger voltar_btn mt-3" type="button" style="width: fit-content;">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Voltar
+                </button>
+                
+                <button class="btn btn-primary adicionar_item mt-3" type="button" style="width: fit-content;">
+                    <i class="fa-solid fa-bag-shopping text-light"></i>
+                    Sacola
+                </button>
+            </div>
+
+
+
         </div>
+
     </div>
 
     <div class="card card-oculto cardOcultoMaxValues" aria-hidden="true">

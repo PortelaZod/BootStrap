@@ -141,6 +141,9 @@ img.item-img{
     background-color: white;
     transition: all .5s;
 }
+.btn_grade{
+
+}
 
 @media (min-width: 375px){
     img.item-img{

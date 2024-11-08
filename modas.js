@@ -18,30 +18,61 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+//abre modal que mostra os dados do item clicado
 let item_modal = (x) => {
     
     document.querySelector('.item_modal').style.left = '0'
     document.querySelector('.item_modal_img').src = x.img
     document.querySelector('.item_modal_nome').innerHTML = x.nome
-    document.querySelector('.item_modal_preco').innerHTML = x.preco
+    document.querySelector('.item_modal_preco').innerHTML = `R$ ${x.preco}`
 
     let gtam = x.grade
-   
-    // gtam.forEach((e) =>{
-        
-    //     let clone_btn = document.querySelector('.modelo_btn').cloneNode(true)
-    //     document.querySelector('.item_modal_grade').append(clone_btn)
-    //     clone_btn.querySelector('.btn_grade').value = e[0]
-    //     console.log(e)
-    // })
-
+    
     for (const element in gtam) {
-        console.log(`ola ${gtam[element]}`)
                 let clone_btn = document.querySelector('.modelo_btn').cloneNode(true)
                 document.querySelector('.item_modal_grade').append(clone_btn)
                 clone_btn.querySelector('.btn_grade').value = gtam[element]
     }
-}
+
+    //fechar modal de item
+    let voltar_btn = document.querySelector('.voltar_btn').addEventListener('click',()=>{
+        document.querySelector('.item_modal').style.left = '-400%',
+        document.querySelector('.item_modal_grade').innerHTML = ''
+    })//fechar modal de item
+
+    let adicionar_item = document.querySelector('.adicionar_item').addEventListener('click',()=>{
+        document.querySelector('.item_modal').style.left = '-400%',
+        document.querySelector('.item_modal_grade').innerHTML = ''
+        toastFunction()
+    })
+
+}//abre modal que mostra os dados do item clicado
+
+
+ //função que adiciona os itens no localStorage para ser resgatados na página da Sacola.
+let sacola = []
+const addSacola = (x) => {
+
+    if (localStorage.arrItens) {
+        sacola = JSON.parse(localStorage.getItem('arrItens'))
+    }
+
+    let novoItem = x
+    sacola.push(novoItem)
+    localStorage.arrItens = JSON.stringify(sacola)
+} //função que adiciona os itens no localStorage para ser resgatados na página da Sacola.
+
+
+//aviso de item adicionado na sacola
+let toastFunction = () => {
+    let toast = document.querySelector('.t-oast')
+    toast.style.visibility = 'visible'
+
+    setTimeout(() => {
+        toast.style.visibility = 'hidden'
+    }, 1500);
+}//aviso de item adicionado na sacola
+
 
 
 const querySnapshot = await getDocs(collection(db, "NACIONAL"));
@@ -62,14 +93,7 @@ querySnapshot.forEach((doc) => {
 });
 
 
-let toastFunction = () => {
-    let toast = document.querySelector('.t-oast')
-    toast.style.visibility = 'visible'
 
-    setTimeout(() => {
-        toast.style.visibility = 'hidden'
-    }, 1500);
-}
 
 // const addSacolaBtn = document.querySelectorAll('.addBtn2')
 // addSacolaBtn.forEach(e=>
@@ -107,20 +131,6 @@ let toastFunction = () => {
 //     })
 
 // };
-
-
-let sacola = []
-const addSacola = (x) => {
-
-    if (localStorage.arrItens) {
-        sacola = JSON.parse(localStorage.getItem('arrItens'))
-    }
-
-    let novoItem = x
-    sacola.push(novoItem)
-    localStorage.arrItens = JSON.stringify(sacola)
-    //função que adiciona os itens no localStorage para ser resgatados na página da Sacola.
-}
 
 
 // Efeito Modal nas Imagens
