@@ -27,12 +27,13 @@ let item_modal = (x) => {
     document.querySelector('.item_modal_preco').innerHTML = `R$ ${x.preco}`
 
     let gtam = x.grade
-    
+
+    //seleção de tamanho do item
     for (const element in gtam) {
                 let clone_btn = document.querySelector('.modelo_btn').cloneNode(true)
                 document.querySelector('.item_modal_grade').append(clone_btn)
                 clone_btn.querySelector('.btn_grade').value = gtam[element]
-    }
+    }//seleção de tamanho do item
 
     //fechar modal de item
     let voltar_btn = document.querySelector('.voltar_btn').addEventListener('click',()=>{
@@ -40,11 +41,21 @@ let item_modal = (x) => {
         document.querySelector('.item_modal_grade').innerHTML = ''
     })//fechar modal de item
 
+    //adicionar item na sacola e fechar modal
     let adicionar_item = document.querySelector('.adicionar_item').addEventListener('click',()=>{
         document.querySelector('.item_modal').style.left = '-400%',
         document.querySelector('.item_modal_grade').innerHTML = ''
         toastFunction()
-    })
+
+                let item = {
+                    nome: x.nome,
+                    preco: x.preco,
+                    img: x.img,
+                    qtd: 1,
+                }
+
+        addSacola(item)
+    })//adicionar item na sacola e fechar modal
 
 }//abre modal que mostra os dados do item clicado
 
@@ -92,47 +103,6 @@ querySnapshot.forEach((doc) => {
     })
 });
 
-
-
-
-// const addSacolaBtn = document.querySelectorAll('.addBtn2')
-// addSacolaBtn.forEach(e=>
-//     e.addEventListener('click',()=>{
-//         let a = e.parentElement.parentElement.parentElement
-//         document.querySelector('.item_modal').style.left='0'
-//         document.querySelector('.item_modal_img').src = a.querySelector('.item-img').src
-//         document.querySelector('.item_modal_nome').innerHTML = a.querySelector('.item-nome').innerHTML
-//         document.querySelector('.item_modal_preco').innerHTML = a.querySelector('.item-preco').innerHTML
-
-//     })  
-// )
-
-
-// const addSacolaBtn = document.querySelectorAll('.addBtn2')
-
-// for (let i = 0; i < addSacolaBtn.length; i++) {
-
-//     const element = addSacolaBtn[i];
-//     element.addEventListener('click', () => {
-//         // const itemNome = element.parentElement.parentElement.querySelector('.item-nome').innerText
-//         // const itemPreco = element.parentElement.parentElement.querySelector('.item-preco').innerText
-//         // const itemImg = element.parentElement.parentElement.parentElement.querySelector('.item-img').src
-//         // let qtd = 1
-
-//         // let item = {
-//         //     nome: itemNome,
-//         //     preco: itemPreco,
-//         //     img: itemImg,
-//         //     qtd: qtd
-//         // }
-
-//         // toastFunction()
-//         // addSacola(item)
-//     })
-
-// };
-
-
 // Efeito Modal nas Imagens
 let imgs = document.querySelectorAll('.item-img')
 imgs.forEach(e =>
@@ -140,18 +110,20 @@ imgs.forEach(e =>
         // document.querySelector('.img_modal').style.right = '0'
         document.querySelector('.img_modal').style.scale = '1'
         document.querySelector('.img_zoom').src = e.src
-    }))
+    }))// Efeito Modal nas Imagens
 
+//zoom na img do item
 let zoom = document.querySelectorAll('.zoom')
 zoom.forEach(e =>
     e.addEventListener('click', () => {
         document.querySelector('.img_modal').style.scale = '1'
         document.querySelector('.img_zoom').src = e.parentElement.querySelector('.item-img').src
-    }))
+    }))//zoom na img do item
 
+// fechar zoom Modal nas Imagens
 let x = document.querySelectorAll('.x')
 x.forEach(e =>
     e.addEventListener('click', () => {
         document.querySelector('.img_modal').style.scale = '0'
-    }))
+    }))// fechar zoom Modal nas Imagens
 // Efeito Modal nas Imagens

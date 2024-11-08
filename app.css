@@ -81,12 +81,12 @@
     font-weight: bold;
 }
 
-.grades{
+/* .grades{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .itens-area{
     grid-template-columns: repeat(2,1fr);
@@ -140,9 +140,6 @@ img.item-img{
     z-index: 3;
     background-color: white;
     transition: all .5s;
-}
-.btn_grade{
-
 }
 
 @media (min-width: 375px){
