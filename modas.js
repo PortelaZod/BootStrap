@@ -18,13 +18,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-//obter grade do item
-
+//obter grade do item selecionado pelo usuário
 let tamanho_item = ''
 let grade_item = (x)=>{
     tamanho_item = x
 }
-//obter grade do item
+//obter grade do item selecionado pelo usuário
 
 //abre modal que mostra os dados do item clicado
 let item_modal = (x) => {
@@ -53,24 +52,27 @@ let item_modal = (x) => {
 
     //adicionar item na sacola e fechar modal
     let adicionar_item = document.querySelector('.adicionar_item').addEventListener('click',()=>{
-
-        toastFunction()
-
                 let item = {
                     nome: x.nome,
                     preco: x.preco,
                     img: x.img,
                     qtd: 1,
-                    grade:gtam[0],
                 }
 
-                if(tamanho_item != ''){
-                    item.grade = tamanho_item
+                if(gtam.length == 1){
+                    item.grade = gtam[0]
+                    addSacola(item)
+                    document.querySelector('.item_modal').style.left = '-400%',
+                    location.reload()
+                }else if(tamanho_item == ""){
+                    alert('Selecione um tamanho')
+                }else{
+                    item.grade = tamanho_item;
+                    addSacola(item)
+                    document.querySelector('.item_modal').style.left = '-400%',
+                    location.reload()
                 }
-                console.log(item)
-
-                // addSacola(item)
-        
+                toastFunction()
     })//adicionar item na sacola e fechar modal
 
 }//abre modal que mostra os dados do item clicado

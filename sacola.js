@@ -38,8 +38,9 @@ if (itens == '') {
         const areaSacola = document.querySelector('.area-sacola').append(itemCardSacola)
         itemCardSacola.querySelector('.item-img-sacola').src = e.img
         itemCardSacola.querySelector('.item-nome-sacola').innerText = e.nome
-        itemCardSacola.querySelector('.item-preco-sacola').innerHTML = e.preco
+        itemCardSacola.querySelector('.item-preco-sacola').innerHTML = `R$ ${e.preco}`
         itemCardSacola.querySelector('.item-qtd-sacola').value = e.qtd
+        itemCardSacola.querySelector('.grade_item').innerHTML = `${e.grade}`
 
         //atualizar valor de quantidade do item
         let qtdInput = itemCardSacola.querySelector('.item-qtd-sacola')
@@ -49,8 +50,8 @@ if (itens == '') {
             arrFilter.push(e)
             localStorage.arrItens = JSON.stringify(arrFilter)
             location.reload()
-        })
-        //atualizar valor de quantidade do item
+        })//atualizar valor de quantidade do item
+        
 
 
         //remover item Sacola
@@ -58,8 +59,8 @@ if (itens == '') {
             let arrFilter = itens.filter(item => item != e)
             localStorage.arrItens = JSON.stringify(arrFilter)
             location.reload()
-        })
-        //remover item Sacola
+        })//remover item Sacola
+        
     });
 
 
@@ -72,8 +73,8 @@ if (itens == '') {
         total.push(e.preco.replace('R$', '') * e.qtd);
         let somatotal = total.reduce((i, o) => i + o)
         let areaValorTotal = document.querySelector('.valor-total').innerHTML = `Total (${total.length} Itens) R$ ${somatotal.toFixed(2)}`;
-    });
-    //valor soma total dos Itens na Sacola
+    });//valor soma total dos Itens na Sacola
+    
 
 
     let finalizar = document.querySelector('.enviarPedido').addEventListener('click', () => {

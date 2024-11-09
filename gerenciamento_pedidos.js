@@ -29,8 +29,8 @@ querySnapshot.forEach(async (doc) => {
     
     
     itens.forEach(element => {
-        let {nome,preco,qtd} = element
-        let itens_arr = `${nome} | Valor Unitário:${preco} | Unidades: ${qtd}`
+        let {nome,preco,qtd,grade} = element
+        let itens_arr = `${nome} | Valor Unitário:${preco} | Unidades: ${qtd} | Tamanho: ${grade}`
         let area_itens_pedido_modelo = document.querySelector('.area_itens_pedido_modelo').cloneNode(true)
         card_pedido.querySelector('.item').append(area_itens_pedido_modelo)
         area_itens_pedido_modelo.innerHTML = itens_arr
