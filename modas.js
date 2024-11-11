@@ -38,7 +38,6 @@ let item_modal = (x) => {
                 let clone_btn = document.querySelector('.modelo_btn').cloneNode(true)
                 document.querySelector('.item_modal_grade').append(clone_btn)
                 clone_btn.querySelector('.btn_grade').value = gtam[element]
-                let a = clone_btn.querySelector('.btn_grade')
                 clone_btn.querySelector('.btn_grade').addEventListener('click',()=>{
                     grade_item(gtam[element])
                 })
@@ -46,10 +45,6 @@ let item_modal = (x) => {
 
     //fechar modal de item
     let voltar_btn = document.querySelector('.voltar_btn').addEventListener('click',()=>{
-        // document.querySelector('.item_modal').style.left = '-400%',
-        // document.querySelector('.item_modal_grade').innerHTML = ''
-        // tamanho_item = ''
-        // item_modal('')
         location.reload()
     })//fechar modal de item
 
@@ -73,7 +68,7 @@ let item_modal = (x) => {
                     addSacola(item)
                     location.reload()
                 }
-                toastFunction()
+
     })//adicionar item na sacola e fechar modal
 
 }//abre modal que mostra os dados do item clicado
@@ -91,19 +86,6 @@ const addSacola = (x) => {
     sacola.push(novoItem)
     localStorage.arrItens = JSON.stringify(sacola)
 } //função que adiciona os itens no localStorage para ser resgatados na página da Sacola.
-
-
-//aviso de item adicionado na sacola
-let toastFunction = () => {
-    let toast = document.querySelector('.t-oast')
-    toast.style.visibility = 'visible'
-
-    setTimeout(() => {
-        toast.style.visibility = 'hidden'
-    }, 1500);
-}//aviso de item adicionado na sacola
-
-
 
 const querySnapshot = await getDocs(collection(db, "NACIONAL"));
 querySnapshot.forEach((doc) => {
