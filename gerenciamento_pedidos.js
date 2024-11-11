@@ -36,5 +36,11 @@ querySnapshot.forEach(async (doc) => {
         area_itens_pedido_modelo.innerHTML = itens_arr
     });
 
+    card_pedido.querySelector('.whats').addEventListener('click',()=>{
+        var telefone = `55${data.tel}`;
+        var mensagem = '';
+        var url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+        window.open(url, '_blank');
+    })
     
 });

@@ -54,7 +54,7 @@ const createNewUser = () => {
       setDoc(doc(db, "users", user.uid), {
         nome: nome,
         sobrenome: sobrenome,
-        tel: `55${tel}`,
+        tel: tel,
         email: userEmail,
         endereço: endereco,
         bairro: bairro,
