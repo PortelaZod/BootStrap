@@ -92,8 +92,13 @@
                 <a class="whats" href=""><p class="tel-cliente">Tel: 5592999999999</p></a>
                 <p class="endereco">Endereço: Rua I n10, alvorada 2, 99999999</p>
                 <p class="card-text valor-pedido">R$00.00</p>
-                <p class="qtd_itens"></p>
-                <p class="item"></p>
+                <p class="qtd_itens text-danger"></p>
+                <p class="item text-primary" style="cursor: pointer;"></p>
+
+                <div class="comandos_pedidos d-flex flex-row justify-content-around">
+                    <button class="btn btn-danger cancelar d-flex flex-row justify-content-center align-items-center"> <img src="./Layout-imgs/cancel_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" width="24px" height="24px">Pedido cancelado</button>
+                    <button class="btn btn-primary finalizar d-flex flex-row justify-content-center align-items-center"> <img src="./Layout-imgs/check_circle_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" width="24px" height="24px">Pedido finalizado</button>
+                </div>
             </div>
         </div>
 
@@ -103,7 +108,12 @@
     <div class="container">
         <div class="area_pedidos container">
         </div>
-    </div>
+        <div class="item_img_container m-3 text-light d-flex flex-row justify-content-center align-items-center" style="position: fixed; bottom: 0;right: 0; width: 120px; height: 120px;">
+            <p style="position: absolute;bottom: 0; font-size: 14px; background-color: rgba(0, 0, 0, 0.5); width: 100%; text-align: center;">Img do produto</p>
+            <img class="item_img" src="./Layout-imgs/Fundo Cinza.png" style="width: 100%;height: 100%; transition: all.5s; object-fit: cover;">
+        </div>
+        </div>
+   
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

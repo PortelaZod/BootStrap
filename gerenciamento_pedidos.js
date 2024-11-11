@@ -23,17 +23,34 @@ querySnapshot.forEach(async (doc) => {
     card_pedido.querySelector('.num-pedido').innerHTML = `Pedido: #${data.pedido}`
     card_pedido.querySelector('.data_pedido').innerHTML = `Data: ${data.data}`
     card_pedido.querySelector('.nome-cliente').innerHTML = `Nome do cliente: ${data.nome}`
-    card_pedido.querySelector('.tel-cliente').innerHTML = `Telefone: ${data.tel}`
+    card_pedido.querySelector('.tel-cliente').innerHTML = `Whats: ${data.tel}`
     card_pedido.querySelector('.endereco').innerHTML = `Endereço: ${data.endereco}`
     card_pedido.querySelector('.valor-pedido').innerHTML = `Total do Pedido: R$ ${data.valor}`
     
+    //funções para finalizar ou cancelar pedidos
+    card_pedido.querySelector('.finalizar').addEventListener('click',()=>{
+        alert(`pedido ${data.pedido} Finalizado`)
+        console.log(data)
+    })
+    card_pedido.querySelector('.cancelar').addEventListener('click',()=>{
+        alert(`pedido ${data.pedido} Cancelado`)
+
+    })//funções para finalizar ou cancelar pedidos
+
+
+    let qtds = data.itens.map(e=> e.qtd*1)
+    let qtds_somadas = qtds.reduce((x,y)=> x+y)
+        card_pedido.querySelector('.qtd_itens').innerHTML = `Quantidade de Items: ${qtds_somadas}`
     
     itens.forEach(element => {
-        let {nome,preco,qtd,grade} = element
-        let itens_arr = `${nome} | Valor Unitário:${preco} | Unidades: ${qtd} | Tamanho: ${grade}`
+        let {nome,preco,qtd,grade,img} = element
+        let itens_arr = `${nome} | Valor Unitário: R$ ${preco} | Unidades: ${qtd} | Tamanho: ${grade}`
         let area_itens_pedido_modelo = document.querySelector('.area_itens_pedido_modelo').cloneNode(true)
         card_pedido.querySelector('.item').append(area_itens_pedido_modelo)
         area_itens_pedido_modelo.innerHTML = itens_arr
+        area_itens_pedido_modelo.addEventListener('click',()=>{
+            document.querySelector('.item_img').src = img
+        })
     });
 
     card_pedido.querySelector('.whats').addEventListener('click',()=>{

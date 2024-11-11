@@ -71,8 +71,10 @@ if (itens == '') {
     valores.forEach(e => {
 
         total.push(e.preco.replace('R$', '') * e.qtd);
+        let qtds = valores.map(x=> x.qtd*1)
+        let total_quantidades = qtds.reduce((x,y)=> x+y)
         let somatotal = total.reduce((i, o) => i + o)
-        let areaValorTotal = document.querySelector('.valor-total').innerHTML = `Total (${total.length} Itens) R$ ${somatotal.toFixed(2)}`;
+        let areaValorTotal = document.querySelector('.valor-total').innerHTML = `Total (${total_quantidades} Itens) R$ ${somatotal.toFixed(2)}`;
     });//valor soma total dos Itens na Sacola
     
 
@@ -113,7 +115,6 @@ if (itens == '') {
                     //whats
 
                     enviarPedido(all)
-                    console.log(all)
                 });
 
             } else {
