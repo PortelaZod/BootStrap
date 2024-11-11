@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-import { getFirestore, collection, getDocs,setDoc,doc,deleteDoc } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"
+import { getFirestore, collection, getDocs,setDoc,doc} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"
 
 const firebaseConfig = {
     apiKey: "AIzaSyA5OgFn-7QRpthDJcz32GmHcBOLDDqtx6Y",
@@ -14,34 +14,19 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 let area_pedidos = document.querySelector('.area_pedidos')
-const querySnapshot = await getDocs(collection(db, "PEDIDOS"));
+const querySnapshot = await getDocs(collection(db, "PEDIDOS_FINALIZADOS"));
 querySnapshot.forEach(async (doc) => {
     const data = doc.data()
     let itens = data.itens
     let card_pedido = document.querySelector('.pedido').cloneNode(true)
     area_pedidos.append(card_pedido)
-    card_pedido.querySelector('.num-pedido').innerHTML = `Pedido: #${data.pedido}`
-    card_pedido.querySelector('.data_pedido').innerHTML = `Data: ${data.data}`
+    card_pedido.querySelector('.num-pedido').innerHTML = `Pedido Finalizado: #${data.pedido}`
+    card_pedido.querySelector('.data_pedido').innerHTML = `Data do Pedido: ${data.data}`
     card_pedido.querySelector('.nome-cliente').innerHTML = `Nome do cliente: ${data.nome}`
     card_pedido.querySelector('.tel-cliente').innerHTML = `Whats: ${data.tel}`
     card_pedido.querySelector('.endereco').innerHTML = `Endereço: ${data.endereco}`
     card_pedido.querySelector('.valor-pedido').innerHTML = `Total do Pedido: R$ ${data.valor}`
     
-    //funções para finalizar ou cancelar pedidos
-    card_pedido.querySelector('.finalizar').addEventListener('click', ()=>{
-        finalizar_pedido(data)
-        deletar_pedido(data.pedido)
-        alert(`pedido ${data.pedido} Finalizado`)
-        location.reload()
-    })
-    card_pedido.querySelector('.cancelar').addEventListener('click',()=>{
-        cancelar_pedido(data)
-        deletar_pedido(data.pedido)
-        alert(`pedido ${data.pedido} Cancelado`)
-        location.reload()
-    })//funções para finalizar ou cancelar pedidos
-
-
     let qtds = data.itens.map(e=> e.qtd*1)
     let qtds_somadas = qtds.reduce((x,y)=> x+y)
         card_pedido.querySelector('.qtd_itens').innerHTML = `Quantidade de Items: ${qtds_somadas}`
@@ -58,45 +43,4 @@ querySnapshot.forEach(async (doc) => {
             document.querySelector('.item_img').src = img
         })//função pra mostrar a imagem item do pedido
     });
-
-    card_pedido.querySelector('.whats').addEventListener('click',()=>{
-        var telefone = `55${data.tel}`;
-        var mensagem = '';
-        var url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
-        window.open(url, '_blank');
-    })
-    
 });
-
-let finalizar_pedido = async (x) => {
-
-    await setDoc(doc(db, "PEDIDOS_FINALIZADOS", x.pedido), {
-        pedido: x.pedido,
-        data:x.data,
-        tel:x.tel,
-        endereco:x.endereco,
-        valor:x.valor,
-        itens:x.itens,
-        nome:x.nome
-    });
-
-}
-
-let cancelar_pedido = async (x) => {
-
-    await setDoc(doc(db, "PEDIDOS_CANCELADOS", x.pedido), {
-        pedido: x.pedido,
-        data:x.data,
-        tel:x.tel,
-        endereco:x.endereco,
-        valor:x.valor,
-        itens:x.itens,
-        nome:x.nome
-    });
-
-}
-
-let deletar_pedido = async (x) => {
-
-    await deleteDoc(doc(db, "PEDIDOS", x));
-}
