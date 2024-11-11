@@ -30,7 +30,6 @@ querySnapshot.forEach(async (doc) => {
     //funções para finalizar ou cancelar pedidos
     card_pedido.querySelector('.finalizar').addEventListener('click',()=>{
         alert(`pedido ${data.pedido} Finalizado`)
-        console.log(data)
     })
     card_pedido.querySelector('.cancelar').addEventListener('click',()=>{
         alert(`pedido ${data.pedido} Cancelado`)

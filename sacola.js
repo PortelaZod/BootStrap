@@ -51,7 +51,7 @@ if (itens == '') {
             localStorage.arrItens = JSON.stringify(arrFilter)
             location.reload()
         })//atualizar valor de quantidade do item
-        
+
 
 
         //remover item Sacola
@@ -60,7 +60,7 @@ if (itens == '') {
             localStorage.arrItens = JSON.stringify(arrFilter)
             location.reload()
         })//remover item Sacola
-        
+
     });
 
 
@@ -71,12 +71,12 @@ if (itens == '') {
     valores.forEach(e => {
 
         total.push(e.preco.replace('R$', '') * e.qtd);
-        let qtds = valores.map(x=> x.qtd*1)
-        let total_quantidades = qtds.reduce((x,y)=> x+y)
+        let qtds = valores.map(x => x.qtd * 1)
+        let total_quantidades = qtds.reduce((x, y) => x + y)
         let somatotal = total.reduce((i, o) => i + o)
         let areaValorTotal = document.querySelector('.valor-total').innerHTML = `Total (${total_quantidades} Itens) R$ ${somatotal.toFixed(2)}`;
     });//valor soma total dos Itens na Sacola
-    
+
 
 
     let finalizar = document.querySelector('.enviarPedido').addEventListener('click', () => {
@@ -89,9 +89,22 @@ if (itens == '') {
                 // ...
                 const unsub = onSnapshot(doc(db, "users", user.uid), (doc) => {
                     const data = doc.data()
+                    let info_data = new Date()
+
+                    // Formatar a data para o fuso horário "America/Sao_Paulo"
+                    let formato = new Intl.DateTimeFormat("pt-BR", {
+                        timeZone: "America/Sao_Paulo",
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                        hour: "numeric",
+                        minute: "numeric",
+                        second: "numeric",
+                        hour12: false  // para formato 24 horas
+                    });
 
                     let InfoCliente = {
-                        data: Date(),
+                        data : `${formato.format(info_data)} (Horário Padrão de Brasília)`,
                         nome: `${data.nome} ${data.sobrenome}`,
                         endereço: data.endereço,
                         bairro: data.bairro,
@@ -102,11 +115,11 @@ if (itens == '') {
 
                     let pedido = itens
                     let numeroPedido = `${Math.floor(Math.random() * 9999) + 1000}`
-                    
+
                     let total = itens.map(i => parseFloat(i.preco.replace('R$', '')) * i.qtd * 1)
                     let somaTotal = total.reduce((i, e) => i + e)
-                    let all = [InfoCliente, pedido, somaTotal.toFixed(2),numeroPedido]
-                    
+                    let all = [InfoCliente, pedido, somaTotal.toFixed(2), numeroPedido]
+
                     // whats
                     const numero = '5592982134524'; // Insira o número do destinatário com o código do país
                     let mensagem = `Olá meu nome é ${InfoCliente.nome} e gostaria de confirmar meu pedido ${numeroPedido}.`; // Mensagem a ser enviada
@@ -115,6 +128,7 @@ if (itens == '') {
                     //whats
 
                     enviarPedido(all)
+
                 });
 
             } else {
@@ -125,17 +139,17 @@ if (itens == '') {
     })
 }
 
-let enviarPedido = async (e)=>{
+let enviarPedido = async (e) => {
 
     await setDoc(doc(db, "PEDIDOS", e[3]), {
         pedido: e[3],
         valor: e[2],
         nome: e[0].nome,
         tel: e[0].tel,
-        endereco:`${e[0].endereço}, ${e[0].bairro}, ${e[0].cep }`,
-        email:e[0].email,
-        data:e[0].data,
-        itens:e[1],
-        qtd:e[1].length
-      });
+        endereco: `${e[0].endereço}, ${e[0].bairro}, ${e[0].cep}`,
+        email: e[0].email,
+        data: e[0].data,
+        itens: e[1],
+        qtd: e[1].length
+    });
 }
