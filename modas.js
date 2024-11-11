@@ -46,8 +46,11 @@ let item_modal = (x) => {
 
     //fechar modal de item
     let voltar_btn = document.querySelector('.voltar_btn').addEventListener('click',()=>{
-        document.querySelector('.item_modal').style.left = '-400%',
-        document.querySelector('.item_modal_grade').innerHTML = ''
+        // document.querySelector('.item_modal').style.left = '-400%',
+        // document.querySelector('.item_modal_grade').innerHTML = ''
+        // tamanho_item = ''
+        // item_modal('')
+        location.reload()
     })//fechar modal de item
 
     //adicionar item na sacola e fechar modal
@@ -62,14 +65,12 @@ let item_modal = (x) => {
                 if(gtam.length == 1){
                     item.grade = gtam[0]
                     addSacola(item)
-                    document.querySelector('.item_modal').style.left = '-400%',
                     location.reload()
                 }else if(tamanho_item == ""){
                     alert('Selecione um tamanho')
                 }else{
                     item.grade = tamanho_item;
                     addSacola(item)
-                    document.querySelector('.item_modal').style.left = '-400%',
                     location.reload()
                 }
                 toastFunction()
