@@ -40,7 +40,7 @@ if (itens == '') {
         itemCardSacola.querySelector('.item-nome-sacola').innerText = e.nome
         itemCardSacola.querySelector('.item-preco-sacola').innerHTML = `R$ ${e.preco}`
         itemCardSacola.querySelector('.item-qtd-sacola').value = e.qtd
-        itemCardSacola.querySelector('.grade_item').innerHTML = `${e.grade}`
+        itemCardSacola.querySelector('.grade_item').innerHTML = `Tam: ${e.grade}`
 
         //atualizar valor de quantidade do item
         let qtdInput = itemCardSacola.querySelector('.item-qtd-sacola')
