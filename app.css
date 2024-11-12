@@ -151,7 +151,10 @@ img.item-img{
 }
 
 .main_card_img{
-
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .main_card_btn{
@@ -178,7 +181,7 @@ img.item-img{
 }
 
 .main_card_duplo_img{
-    height:150px;
+    height:160px;
 }
 
 
