@@ -148,13 +148,20 @@ img.item-img{
     width: 100%;
     height: 150px;
     margin: auto;
+    position: relative;
+    overflow: hidden;
 }
 
 .main_card_img{
     width: 100%;
-    height: 160px;
+    height: 190px;
     object-fit: cover;
     object-position: center;
+    transition: all .5s;
+}
+
+.scaleZ{
+    scale: 1.1;
 }
 
 .main_card_btn{
@@ -163,16 +170,23 @@ img.item-img{
     justify-content: center;
     align-items: center;
     height: 62px;
+    position: absolute;
+    bottom: 0;
+}
+
+.main_card a{
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .main_card_btn p{
     margin: 0;
     padding: 0;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
 }
 
 .main_card_duplo{
@@ -184,8 +198,11 @@ img.item-img{
     height:160px;
 }
 
-
-
+/* .nav_toggle{
+    position: absolute;
+    top: -600%;
+    transition: all .5s;
+} */
 
 @media (min-width: 375px){
     img.item-img{

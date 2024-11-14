@@ -55,7 +55,6 @@ logOutBtn.addEventListener('click', () => {
 })
 
 
-
 let icone_sacola =  document.querySelector('.icone-sacola')
 if(localStorage.arrItens == '[]'){
   icone_sacola.style.display='none'
