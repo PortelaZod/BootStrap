@@ -198,11 +198,24 @@ img.item-img{
     height:160px;
 }
 
-/* .nav_toggle{
-    position: absolute;
-    top: -600%;
-    transition: all .5s;
-} */
+.main_card_mini{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center;
+    align-items: center;
+    gap: .1em;
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+.tams{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
 
 @media (min-width: 375px){
     img.item-img{
