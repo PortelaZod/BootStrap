@@ -32,14 +32,15 @@ let item_modal = (x) => {
     document.querySelector('.item_modal_nome').innerHTML = x.nome
     document.querySelector('.item_modal_preco').innerHTML = `R$ ${x.preco}`
     let gtam = x.grade
-
     //seleção de tamanho do item
+
     for (const element in gtam) {
                 let clone_btn = document.querySelector('.modelo_btn').cloneNode(true)
                 document.querySelector('.item_modal_grade').append(clone_btn)
                 clone_btn.querySelector('.btn_grade').value = gtam[element]
                 clone_btn.querySelector('.btn_grade').addEventListener('click',()=>{
                     grade_item(gtam[element])
+
                 })
     }//seleção de tamanho do item
 
@@ -101,6 +102,7 @@ querySnapshot.forEach((doc) => {
 
     itemPlaceholder.querySelector('.addBtn2').addEventListener('click',()=>{
         item_modal(item)
+        localStorage.item = JSON.stringify(item)
     })
 });
 
@@ -128,5 +130,3 @@ x.forEach(e =>
         document.querySelector('.img_modal').style.scale = '0'
     }))// fechar zoom Modal nas Imagens
 // Efeito Modal nas Imagens
-
-
