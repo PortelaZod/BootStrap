@@ -169,8 +169,8 @@ function enviando(x){
     setTimeout(() => {
         document.querySelector('.enviando').style.display='none'
         localStorage.arrItens = ''
+        window.location(x, '_blank');
         window.location = './index.html'
-        window.open(x, '_blank');
     }, 1000);
 }//animção enviando pedido
 
