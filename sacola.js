@@ -119,10 +119,10 @@ if (itens == '') {
                     let mensagem = `Olá meu nome é ${InfoCliente.nome} e gostaria de confirmar meu pedido ${numeroPedido}.`; // Mensagem a ser enviada
                     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
                     //whats
-                    enviarPedido(all)
-                    enviando(url)
-                    
-
+                    // enviarPedido(all)
+                    localStorage.removeItem('arrItens')
+                    window.location='index.html'
+                    window.location = url
                 });
 
             } else {
@@ -163,14 +163,13 @@ imgs.forEach(e=>{
     })
 })//animação de carregamento
 
-//animção enviando pedido
-function enviando(x){
-    document.querySelector('.enviando').style.display='flex'
-    setTimeout(() => {
-        document.querySelector('.enviando').style.display='none'
-        localStorage.arrItens = ''
-        window.location(x, '_blank');
-        window.location = './index.html'
-    }, 1000);
-}//animção enviando pedido
+// //animção enviando pedido
+// function enviando(x){
+//     document.querySelector('.enviando').style.display='flex'
+//     setTimeout(() => {
+//         document.querySelector('.enviando').style.display='none'
+
+//         window.location = './index.html'
+//     }, 1000);
+// }//animção enviando pedido
 
