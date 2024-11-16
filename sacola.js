@@ -114,15 +114,10 @@ if (itens == '') {
                     let somaTotal = total.reduce((i, e) => i + e)
                     let all = [InfoCliente, pedido, somaTotal.toFixed(2), numeroPedido]
 
-                    // whats
-                    const numero = '5592982134524'; // Insira o número do destinatário com o código do país
-                    let mensagem = `Olá meu nome é ${InfoCliente.nome} e gostaria de confirmar meu pedido ${numeroPedido}.`; // Mensagem a ser enviada
-                    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-                    //whats
-                    // enviarPedido(all)
+                    enviarPedido(all)
+                    localStorage.npedido = JSON.stringify([numeroPedido,InfoCliente.nome])
                     localStorage.removeItem('arrItens')
-                    window.location='index.html'
-                    window.location = url
+                    location = './pedido_enviado.html'
                 });
 
             } else {
