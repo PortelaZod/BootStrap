@@ -62,16 +62,20 @@
                                             <a class="dropdown-item" href="./moda-nacional.html">Camisetas Nacionais</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="./moda_importada_malha_peruana.html">Camisetas importadas malha Peruana</a>
+                                            <a class="dropdown-item"
+                                                href="./moda_importada_malha_peruana.html">Camisetas importadas malha
+                                                Peruana</a>
                                         </li>
                                         <!-- <li>
-                                            <a class="dropdown-item text-decoration-line-through">Camisetas importadas malha Egípcia</a>
+                                            <a class="dropdown-item" href="#">Camisetas importadas malha Egípcia</a>
                                         </li> -->
                                         <li>
-                                            <a class="dropdown-item" href="./moda_importada_40.01.html">Camisetas importadas fio 40.1</a>
+                                            <a class="dropdown-item" href="./moda_importada_40.01.html">Camisetas
+                                                importadas fio 40.1</a>
                                         </li>
                                     </ul>
                                 </div>
+
                             </li>
 
                             <li class="nav-item">
@@ -135,24 +139,36 @@
                 </div>
             </div>
         </nav>
-    </div>
-    <!-- Nav -->
+    </div><!-- Nav -->
 
 
     <!-- item placeholders -->
     <div class="modelos d-none">
         <div class="card itemPlaceholder" style="width: 100%; height: fit-content; margin: auto;">
-            <div class="zoom"><img src="./Layout-imgs/Zoom.png" style="width: 24px;"></div>
-            <img src="" class="card-img-top item-img" alt="..." style="object-fit: cover;">
+            
+            <div class="zoom "><img src="./Layout-imgs/Zoom.png" style="width: 24px;"></div>
+
+
+                <div class="placeholder placeholder-wave card-img-top placeholder_oculto" style="position: relative; height: 180px;"></div>
+                <img src="" class="card-img-top item-img pos_carregado" alt="..." style="object-fit: cover;">
+
+
             <div class="card-body">
-                <p class="card-title item-nome mb-1" style="font-size: 16px;height: 42px;"></p>
-                <!-- <p class="cod_item fs-6">#0000000000000</p> -->
-                <p class="card-text item-preco mb-1 fs-6" style="user-select: none;"></p>
+                <p class="placeholder  col-12 placeholder-wave nome_placeholder_oculto mt-3"></p>
+                <p class="card-title item-nome mb-1 nome_pos_carregado" style="font-size: 16px;height: 42px;"></p>
+
+                <p class="cod_item fs-6"></p>
+
+                <p class="card-text item-preco mb-1 fs-6 preco_pos_carregado" style="user-select: none;"></p>
+                <p class="placeholder placeholder-wave col-4 preco_placeholder_oculto"></p>
+                
                 <div class="grades">
-                    <p class="tamanho_item bg-ligh mb-1 unselct text-dark" style="user-select: none; font-size: 12px;">
+                    <p class="placeholder placeholder-wave col-2 tam_placeholder_oculto"></p>
+                    <p class="tamanho_item bg-ligh mb-1 unselct text-dark tam_pos_carregado" style="user-select: none; font-size: 12px;">
                         GG</p>
                 </div>
-                <div class="container" style="display: flex; justify-content: center; align-items: center;">
+
+                <div class="container container_pos_carregado">
                     <button class="btn btn-light addBtn2" type="button">
                         <i class="fa-solid fa-bag-shopping text-dark fs-5"></i>
                         Sacola
@@ -163,12 +179,9 @@
         <div class="modelo_btn">
             <input class="btn_grade btn btn-dark mx-1" type="button" value="GG">
         </div>
+    </div><!-- item placeholders -->
 
-    </div>
-
-    <!-- item placeholders -->
-
-    <div class="itens-area" style="display: none;">
+    <div class="itens-area">
         <div class="img_modal">
             <div class="x"><img src="./Layout-imgs/Close.png"></div>
             <img class="img_zoom" src="./Layout-imgs/Camiseta1.jpg"
@@ -177,78 +190,17 @@
         <div class="btn position-fixed bottom-0 right-0 z-2 bg-black p-2 text-light t-oast">Item adicionado</div>
     </div>
 
-    <div class="card card-oculto cardOcultoMaxValues" aria-hidden="true">
-
-        <div class="card-body">
-            <h5 class="card-title placeholder-glow">
-                <span class="placeholder col-6"></span>
-            </h5>
-            <p class="card-text placeholder-glow">
-                <span class="placeholder col-7"></span>
-                <span class="placeholder col-4"></span>
-                <span class="placeholder col-4"></span>
-                <span class="placeholder col-6"></span>
-                <span class="placeholder col-8"></span>
-            </p>
-            <a class="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
-        </div>
-
-        <div class="card-body">
-            <h5 class="card-title placeholder-glow">
-                <span class="placeholder col-6"></span>
-            </h5>
-            <p class="card-text placeholder-glow">
-                <span class="placeholder col-7"></span>
-                <span class="placeholder col-4"></span>
-                <span class="placeholder col-4"></span>
-                <span class="placeholder col-6"></span>
-                <span class="placeholder col-8"></span>
-            </p>
-            <a class="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
-        </div>
-
-        <div class="card-body">
-            <h5 class="card-title placeholder-glow">
-                <span class="placeholder col-6"></span>
-            </h5>
-            <p class="card-text placeholder-glow">
-                <span class="placeholder col-7"></span>
-                <span class="placeholder col-4"></span>
-                <span class="placeholder col-4"></span>
-                <span class="placeholder col-6"></span>
-                <span class="placeholder col-8"></span>
-            </p>
-            <a class="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
-        </div>
-
-        <div class="card-body">
-            <h5 class="card-title placeholder-glow">
-                <span class="placeholder col-6"></span>
-            </h5>
-            <p class="card-text placeholder-glow">
-                <span class="placeholder col-7"></span>
-                <span class="placeholder col-4"></span>
-                <span class="placeholder col-4"></span>
-                <span class="placeholder col-6"></span>
-                <span class="placeholder col-8"></span>
-            </p>
-            <a class="btn btn-secondary disabled placeholder col-6" aria-disabled="true"></a>
-        </div>
-
-    </div>
-
     <!-- icon-sacola -->
     <div class="icone-sacola btn position-fixed bottom-0 end-0 beating">
         <a href="./sacola.html"><i class="fa-solid fa-bag-shopping text-danger" style="font-size: 3rem;"></i></a>
-    </div>
-    <!-- icon-sacola -->
+    </div><!-- icon-sacola -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
+        
     <script type="module" src="app.js"></script>
-    <script type="module" src="moda_importada_malha_peruana.js"></script>
+    <script type="module" src="moda_importada_malha_peruana.js"></script> 
 </body>
 
 </html>

@@ -10,3 +10,10 @@ main_cards.forEach(e=>{
     })
 })
 
+
+
+let icon = document.querySelector('.info_arrow').addEventListener('click',()=>{
+    // document.querySelector('.infos').classList.remove('displayOff')
+    document.querySelector('.infos').classList.toggle('displayOn')
+    document.querySelector('.info_arrow').classList.toggle('arrow_tranform')
+})

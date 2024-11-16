@@ -1,8 +1,3 @@
-window.addEventListener('load', () => {
-    document.querySelector('.card-oculto').style.display = 'none'
-    document.querySelector('.itens-area').style.display = 'grid'
-})
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"
 
@@ -17,7 +12,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
 const querySnapshot = await getDocs(collection(db, "IMPORTADAS_40.01"));
 querySnapshot.forEach((doc) => {
     const item = doc.data()
@@ -30,9 +24,11 @@ querySnapshot.forEach((doc) => {
     let grade = `${item.grade}`
     itemPlaceholder.querySelector('.tamanho_item').innerHTML = grade.replaceAll(',', ' | ')
 
+    //adiciona o item no localStorage pra ser resgatado na aba sacola 
     itemPlaceholder.querySelector('.addBtn2').addEventListener('click',()=>{
-        
-    })
+        localStorage.item = JSON.stringify(item)
+        location.href = './item.html'
+    })//adiciona o item no localStorage pra ser resgatado na aba sacola
 });
 
 // Efeito Modal nas Imagens
@@ -43,6 +39,21 @@ imgs.forEach(e =>
         document.querySelector('.img_modal').style.scale = '1'
         document.querySelector('.img_zoom').src = e.src
     }))// Efeito Modal nas Imagens
+
+//card que se oculta a ser carregado o item
+imgs.forEach(e=>
+    e.addEventListener('load',()=>{
+    e.parentElement.querySelector('.placeholder_oculto').style.display='none'
+    e.parentElement.querySelector('.pos_carregado').style.display='flex'
+    e.parentElement.querySelector('.nome_placeholder_oculto').style.display='none'
+    e.parentElement.querySelector('.nome_pos_carregado').style.display='flex'
+    e.parentElement.querySelector('.preco_placeholder_oculto').style.display='none'
+    e.parentElement.querySelector('.preco_pos_carregado').style.display='flex'
+    e.parentElement.querySelector('.tam_placeholder_oculto').style.display='none'
+    e.parentElement.querySelector('.tam_pos_carregado').style.display='flex'
+    e.parentElement.querySelector('.container_pos_carregado').style.display='flex'
+    })
+)//card que se oculta a ser carregado o item
 
 //zoom na img do item
 let zoom = document.querySelectorAll('.zoom')
@@ -59,5 +70,3 @@ x.forEach(e =>
         document.querySelector('.img_modal').style.scale = '0'
     }))// fechar zoom Modal nas Imagens
 // Efeito Modal nas Imagens
-
-

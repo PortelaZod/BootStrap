@@ -1,8 +1,3 @@
-window.addEventListener('load', () => {
-    document.querySelector('.card-oculto').style.display = 'none'
-    document.querySelector('.itens-area').style.display = 'grid'
-})
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"
 
@@ -17,76 +12,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
-//obter grade do item selecionado pelo usuário
-let tamanho_item = ''
-let grade_item = (x)=>{
-    tamanho_item = x
-}
-//obter grade do item selecionado pelo usuário
-
-//abre modal que mostra os dados do item clicado
-let item_modal = (x) => {
-    document.querySelector('.item_modal').style.left = '0'
-    document.querySelector('.item_modal_img').src = x.img
-    document.querySelector('.item_modal_nome').innerHTML = x.nome
-    document.querySelector('.item_modal_preco').innerHTML = `R$ ${x.preco}`
-    let gtam = x.grade
-
-    //seleção de tamanho do item
-    for (const element in gtam) {
-                let clone_btn = document.querySelector('.modelo_btn').cloneNode(true)
-                document.querySelector('.item_modal_grade').append(clone_btn)
-                clone_btn.querySelector('.btn_grade').value = gtam[element]
-                clone_btn.querySelector('.btn_grade').addEventListener('click',()=>{
-                    grade_item(gtam[element])
-                })
-    }//seleção de tamanho do item
-
-    //fechar modal de item
-    let voltar_btn = document.querySelector('.voltar_btn').addEventListener('click',()=>{
-        location.reload()
-    })//fechar modal de item
-
-    //adicionar item na sacola e fechar modal
-    let adicionar_item = document.querySelector('.adicionar_item').addEventListener('click',()=>{
-                let item = {
-                    nome: x.nome,
-                    preco: x.preco,
-                    img: x.img,
-                    qtd: 1,
-                }
-
-                if(gtam.length == 1){
-                    item.grade = gtam[0]
-                    addSacola(item)
-                    location.reload()
-                }else if(tamanho_item == ""){
-                    alert('Selecione um tamanho')
-                }else{
-                    item.grade = tamanho_item;
-                    addSacola(item)
-                    location.reload()
-                }
-
-    })//adicionar item na sacola e fechar modal
-
-}//abre modal que mostra os dados do item clicado
-
-
- //função que adiciona os itens no localStorage para ser resgatados na página da Sacola.
-let sacola = []
-const addSacola = (x) => {
-
-    if (localStorage.arrItens) {
-        sacola = JSON.parse(localStorage.getItem('arrItens'))
-    }
-
-    let novoItem = x
-    sacola.push(novoItem)
-    localStorage.arrItens = JSON.stringify(sacola)
-} //função que adiciona os itens no localStorage para ser resgatados na página da Sacola.
-
 const querySnapshot = await getDocs(collection(db, "IMPORTADAS_PERUANAS"));
 querySnapshot.forEach((doc) => {
     const item = doc.data()
@@ -99,9 +24,11 @@ querySnapshot.forEach((doc) => {
     let grade = `${item.grade}`
     itemPlaceholder.querySelector('.tamanho_item').innerHTML = grade.replaceAll(',', ' | ')
 
+    //adiciona o item no localStorage pra ser resgatado na aba sacola 
     itemPlaceholder.querySelector('.addBtn2').addEventListener('click',()=>{
-        item_modal(item)
-    })
+        localStorage.item = JSON.stringify(item)
+        location.href = './item.html'
+    })//adiciona o item no localStorage pra ser resgatado na aba sacola
 });
 
 // Efeito Modal nas Imagens
@@ -112,6 +39,21 @@ imgs.forEach(e =>
         document.querySelector('.img_modal').style.scale = '1'
         document.querySelector('.img_zoom').src = e.src
     }))// Efeito Modal nas Imagens
+
+//card que se oculta a ser carregado o item
+imgs.forEach(e=>
+    e.addEventListener('load',()=>{
+    e.parentElement.querySelector('.placeholder_oculto').style.display='none'
+    e.parentElement.querySelector('.pos_carregado').style.display='flex'
+    e.parentElement.querySelector('.nome_placeholder_oculto').style.display='none'
+    e.parentElement.querySelector('.nome_pos_carregado').style.display='flex'
+    e.parentElement.querySelector('.preco_placeholder_oculto').style.display='none'
+    e.parentElement.querySelector('.preco_pos_carregado').style.display='flex'
+    e.parentElement.querySelector('.tam_placeholder_oculto').style.display='none'
+    e.parentElement.querySelector('.tam_pos_carregado').style.display='flex'
+    e.parentElement.querySelector('.container_pos_carregado').style.display='flex'
+    })
+)//card que se oculta a ser carregado o item
 
 //zoom na img do item
 let zoom = document.querySelectorAll('.zoom')
@@ -128,5 +70,3 @@ x.forEach(e =>
         document.querySelector('.img_modal').style.scale = '0'
     }))// fechar zoom Modal nas Imagens
 // Efeito Modal nas Imagens
-
-

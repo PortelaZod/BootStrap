@@ -52,8 +52,6 @@ if (itens == '') {
             location.reload()
         })//atualizar valor de quantidade do item
 
-
-
         //remover item Sacola
         itemCardSacola.querySelector('.item-remover-sacola').addEventListener('click', () => {
             let arrFilter = itens.filter(item => item != e)

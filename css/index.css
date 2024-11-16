@@ -1,0 +1,34 @@
+.displayOff{
+    position: fixed;
+    bottom: -272px;
+}
+
+.displayOn{
+    position: fixed;
+    bottom: 0;
+}
+
+.infos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+}
+
+.info_arrow{
+    width: 2.5em;
+    background-color: black;
+    border-radius: 100%;
+    transition: all .8s;
+}
+
+.arrow_tranform{
+    transform: rotate(180deg);
+}
+
+.div_qualquer{
+    width: 100%;
+    background-color: black;
+}

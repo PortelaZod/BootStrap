@@ -52,7 +52,7 @@ onAuthStateChanged(auth, (user) => {
 logOutBtn.addEventListener('click', () => {
   signOut(auth)
   location.reload()
-})
+})// LogOut
 
 
 let icone_sacola =  document.querySelector('.icone-sacola')
