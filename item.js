@@ -62,15 +62,31 @@ let adicionar_item = document.querySelector('.adicionar_item').addEventListener(
     if (gtam.length == 1) {
         obj.grade = gtam[0]
         addSacola(obj)
-        history.back()
+        adicionando()
     } else if (tamanho_item == "") {
         alert('Selecione um tamanho')
     } else {
         obj.grade = tamanho_item;
         addSacola(obj)
-        console.log(obj)
-        history.back()
+        adicionando()
     }
 })//adicionar item na sacola e fechar modal
 
+//animação de carregamento
+function carregando(){
+    setTimeout(() => {
+        document.querySelector('.carregando').style.display = 'none'
+    }, 1000);
+}
+let img = document.querySelector('.item_modal_img').addEventListener('load',()=>{
+    carregando()
+})//animação de carregamento
 
+//animação do item adicionado sacola
+function adicionando(){
+    document.querySelector('.adicionado_sacola').style.display = 'flex'
+    setTimeout(() => {
+        document.querySelector('.adicionado_sacola').style.display = 'none'
+        history.back()
+    }, 1000);
+}//animação do item adicionado sacola

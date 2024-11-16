@@ -16,17 +16,13 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
 const db = getFirestore(app);
 
-
-window.onload = () => {
-    document.querySelector('.card-oculto').style.display = 'none'
-}
-
 let itens = JSON.parse(localStorage.getItem('arrItens'))
 
 if (itens == '') {
     document.querySelector('.vazio').style.display = 'flex'
     document.querySelector('.areaValor').style.visibility = 'hidden'
-
+    document.querySelector('.carregando').style.display='none'
+    
 } else {
 
     document.querySelector('.vazio').style.display = 'none'
@@ -122,10 +118,10 @@ if (itens == '') {
                     const numero = '5592982134524'; // Insira o número do destinatário com o código do país
                     let mensagem = `Olá meu nome é ${InfoCliente.nome} e gostaria de confirmar meu pedido ${numeroPedido}.`; // Mensagem a ser enviada
                     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-                    window.open(url, '_blank');
                     //whats
-
                     enviarPedido(all)
+                    enviando(url)
+                    
 
                 });
 
@@ -151,3 +147,30 @@ let enviarPedido = async (e) => {
         qtd: e[1].length
     });
 }
+
+
+//animação de carregamento
+function carregando(){
+    setTimeout(() => {
+        document.querySelector('.carregando').style.display='none'
+    }, 1000);
+}
+
+let imgs = document.querySelectorAll('.item-img-sacola')
+imgs.forEach(e=>{
+    e.addEventListener('load',()=>{
+        carregando()
+    })
+})//animação de carregamento
+
+//animção enviando pedido
+function enviando(x){
+    document.querySelector('.enviando').style.display='flex'
+    setTimeout(() => {
+        document.querySelector('.enviando').style.display='none'
+        localStorage.arrItens = ''
+        window.location = './index.html'
+        window.open(x, '_blank');
+    }, 1000);
+}//animção enviando pedido
+
