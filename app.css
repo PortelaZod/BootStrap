@@ -82,11 +82,33 @@
 }
 
 .itens-area{
+    display: grid;
     grid-template-columns: repeat(2,1fr);
     column-gap: .3em;
     row-gap: .3em;
     padding: .3em;
 }
+
+.itens_area_oculta{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: .3em;
+    row-gap: .3em;
+    padding: .3em;
+}
+
+.pos_carregado,.nome_pos_carregado,.preco_pos_carregado,.tam_pos_carregado{
+    display: none;
+}
+
+.container_pos_carregado{
+    display: none;
+    justify-content: center; 
+    align-items: center;
+    
+}
+
+
 
 img.item-img{
     width: 100%;

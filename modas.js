@@ -1,7 +1,7 @@
-window.addEventListener('load', () => {
-    document.querySelector('.card-oculto').style.display = 'none'
-    document.querySelector('.itens-area').style.display = 'grid'
-})
+// window.addEventListener('load', () => {
+//     document.querySelector('.card-oculto').style.display = 'none'
+//     document.querySelector('.itens-area').style.display = 'grid'
+// })
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"
@@ -59,3 +59,18 @@ x.forEach(e =>
         document.querySelector('.img_modal').style.scale = '0'
     }))// fechar zoom Modal nas Imagens
 // Efeito Modal nas Imagens
+
+imgs.forEach(e=>
+    e.addEventListener('load',()=>{
+    e.parentElement.querySelector('.placeholder_oculto').style.display='none'
+    e.parentElement.querySelector('.pos_carregado').style.display='flex'
+    e.parentElement.querySelector('.nome_placeholder_oculto').style.display='none'
+    e.parentElement.querySelector('.nome_pos_carregado').style.display='flex'
+    e.parentElement.querySelector('.preco_placeholder_oculto').style.display='none'
+    e.parentElement.querySelector('.preco_pos_carregado').style.display='flex'
+    e.parentElement.querySelector('.tam_placeholder_oculto').style.display='none'
+    e.parentElement.querySelector('.tam_pos_carregado').style.display='flex'
+    e.parentElement.querySelector('.container_pos_carregado').style.display='flex'
+    console.log(e.parentElement)
+    })
+)
