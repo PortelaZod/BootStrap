@@ -1,6 +1,6 @@
 .displayOff{
     position: fixed;
-    bottom: -236px;
+    bottom: -100%;
 }
 
 .displayOn{
@@ -8,27 +8,86 @@
     bottom: 0;
 }
 
-.infos{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: all .5s;
-}
-
 .info_arrow{
     width: 2.5em;
     background-color: black;
     border-radius: 100%;
-    transition: all .8s;
+    transition: all .5s;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    z-index: 3;
 }
 
 .arrow_tranform{
     transform: rotate(180deg);
 }
 
-.div_qualquer{
-    width: 100%;
+/* informações sobre a loja  */
+.info_zoom{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 1;
+}
+
+.info_zoom_out{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 0;
+}
+
+.links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: .5em;
+    width: 100vw;
+    z-index: 0;
+}
+
+.infos p{
+    color: white;
+    margin: 0;
+    padding: .5em;
+    text-align: center;
+}
+
+.footer{
+    transition: all.5s;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
     background-color: black;
+    border-radius: 5px 5px 0 0;
+}
+/* informações sobre a loja  */
+
+.sobre{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
