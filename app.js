@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"
-import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"
+import { getFirestore, doc, setDoc, onSnapshot,collection,getDocs, query, where } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js"
 
 const firebaseConfig = {
   apiKey: "AIzaSyA5OgFn-7QRpthDJcz32GmHcBOLDDqtx6Y",
@@ -63,3 +63,22 @@ if(localStorage.arrItens == '[]'){
 }else{
   icone_sacola.style.display='none'
 }
+
+const NACIONAL = await getDocs(collection(db,'NACIONAL'));
+NACIONAL.forEach(doc => {
+  
+  let itens = doc.data();
+
+  console.log(itens)
+  
+  
+
+});
+
+const IMPORTADAS_PERUANAS = await getDocs(collection(db,'IMPORTADAS_PERUANAS'));
+// NACIONAL.forEach(doc => {
+//   let item = doc.data()
+//   let fil = [item]
+//   let fill = fil.filter(e=> e.grade === 'M')
+//   console.log(fill)
+// });
