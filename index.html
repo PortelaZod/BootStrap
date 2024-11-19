@@ -76,7 +76,7 @@
                                       </li>
 
                                       <li>
-                                        <a class="dropdown-item" href="./camisetas_polo.html">Camisetas
+                                        <a class="dropdown-item" href="./camisetas_polo.html">
                                             Camisetas Polo</a>
                                     </li>
 
@@ -246,9 +246,9 @@
 
     <!-- Plus Size -->
     <div class="card main_card">
-      <a href="#"><img src="./Layout-imgs/card plus size.jpeg" class="card-img-top main_card_img"
+      <a href="./moda_plus_size.html"><img src="./Layout-imgs/card plus size.jpeg" class="card-img-top main_card_img"
           style="width: 100%;"></a>
-      <a href="#" class="text-light main_card_btn fw-medium">
+      <a href="./moda_plus_size.html" class="text-light main_card_btn fw-medium">
         <p>Plus Size</p>
       </a>
     </div><!-- Plus Size -->
@@ -272,11 +272,13 @@
   </div><!-- cards -->
 
   <!-- info-loja -->
-  <div class="container p-0 mt-3 mb-3 m-auto" style="max-width: 320px;">
-    <img src="./Layout-imgs/entrega.jpeg" class="w-100" style="max-width: 320px;">
+  <div class="container info-loja info_zoom_out" style="transition: all .5s;">
+    <img src="./Layout-imgs/entrega.jpeg" style="width: 90%;">
+    <img src="./Layout-imgs/Close.png" class="fechar_zoom_info" width="32px" style="position: absolute; top: 10%; right: 10%;">
   </div>
-  <div class="p-0 mt-3 mb-3 m-auto" style="max-width: 320px;">
-    <img src="./Layout-imgs/troca.jpeg" class="w-100" style="max-width: 320px;">
+  <div class="container info-loja_troca info_zoom_out" style="transition: all .5s;">
+    <img src="./Layout-imgs/troca.jpeg" style="width: 90%;">
+    <img src="./Layout-imgs/Close.png" class="fechar_zoom_info_troca" width="32px" style="position: absolute; top: 10%; right: 10%;">
   </div><!-- info-loja -->
 
 
@@ -289,7 +291,10 @@
     <img src="./Layout-imgs/arrow_white.png" class="info_arrow">
       <div class="div_qualquer text-light">
           <p style="background-color: red;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod totam dolores optio sint, aut aspernatur dicta numquam perferendis eius dolorem consequatur error labore, impedit unde, quam eaque voluptatibus distinctio quo?</p>
-          <p style="background-color: black;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod totam dolores optio sint, aut aspernatur dicta numquam perferendis eius dolorem consequatur error labore, impedit unde, quam eaque voluptatibus distinctio quo?</p>
+          <div class="column" style="margin: auto;">
+            <p class="entregas fs-4 p-2 text-decoration-underli" style="width: fit-content;height: fit-content; text-align: center; margin: 0; cursor: pointer;">Entregas</p>
+            <p class="trocas fs-4 p-2" style="width: fit-content;height: fit-content; text-align: center; margin: 0;">Política de troca</p>
+          </div>
       </div>
   </div>
 

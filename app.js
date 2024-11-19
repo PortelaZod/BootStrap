@@ -21,7 +21,6 @@ const logOutBtn = document.querySelector('.logOutBtn')
 const usuarioLogado = document.querySelector('.usuario-logado')
 const perfilCliente = document.querySelector('.perfil-cliente')
 
-
 //Enquanto Logado
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -64,21 +63,25 @@ if(localStorage.arrItens == '[]'){
   icone_sacola.style.display='none'
 }
 
-const NACIONAL = await getDocs(collection(db,'NACIONAL'));
-NACIONAL.forEach(doc => {
+// const NACIONAL = await getDocs(collection(db,'BERMUDAS_E_SHORTS'));
+// NACIONAL.forEach(  doc => {
   
-  let itens = doc.data();
+//   let itens = doc.data();
 
-  console.log(itens)
-  
-  
+//   add_db(itens)
+//   console.log(itens)
 
-});
-
-const IMPORTADAS_PERUANAS = await getDocs(collection(db,'IMPORTADAS_PERUANAS'));
-// NACIONAL.forEach(doc => {
-//   let item = doc.data()
-//   let fil = [item]
-//   let fill = fil.filter(e=> e.grade === 'M')
-//   console.log(fill)
 // });
+// function add_db(x){
+
+//   setDoc(doc(db, "grife_chic", x.cod), {
+//     name: x.nome,
+//     cod:x.cod,
+//     grade:x.grade,
+//     img:x.img,
+//     preco:x.preco,
+//     colecao:x.colecao,
+//     quantidade:1,
+//     plus: false
+//   });
+// }

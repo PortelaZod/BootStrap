@@ -13,7 +13,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const q = query(collection(db, "grife_chic"), where("colecao", "==", 'IMPORTADAS_40.01'));
+const q = query(collection(db, "grife_chic"), where("plus", "==", true));
 const querySnapshot = await getDocs(q);
 // const querySnapshot = await getDocs(collection(db, "grife_chic"));
 querySnapshot.forEach((doc) => {
