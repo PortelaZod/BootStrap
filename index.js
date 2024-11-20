@@ -10,11 +10,6 @@ main_cards.forEach(e=>{
     })
 })
 
-let icon = document.querySelector('.info_arrow').addEventListener('click',()=>{
-    document.querySelector('.info_arrow').classList.toggle('arrow_tranform')
-    document.querySelector('.footer').classList.toggle('displayOn')
-})
-
 // zoom nas infos da pagina 
 let entrega = document.querySelector('.entrega')
 entrega.addEventListener('click',()=>{
