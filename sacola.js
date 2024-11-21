@@ -16,9 +16,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
 const db = getFirestore(app);
 
-if (localStorage.arrItens) {
   let itens = JSON.parse(localStorage.arrItens)
-}
     document.querySelector('.carregando').style.display = 'none'
     document.querySelector('.vazio').style.display = 'none'
     document.querySelector('.areaValor').style.visibility = 'visible'
