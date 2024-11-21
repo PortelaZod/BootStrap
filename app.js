@@ -17,9 +17,12 @@ const db = getFirestore(app);
 
 
 const loginBtn = document.querySelector('.loginBtn-index')
+const loginBtn2 = document.querySelector('.login_desktop')
 const logOutBtn = document.querySelector('.logOutBtn')
+const logOutBtn2 = document.querySelector('.logout_desktop')
 const usuarioLogado = document.querySelector('.usuario-logado')
 const perfilCliente = document.querySelector('.perfil-cliente')
+
 
 //Enquanto Logado
 onAuthStateChanged(auth, (user) => {
@@ -28,6 +31,7 @@ onAuthStateChanged(auth, (user) => {
     // https://firebase.google.com/docs/reference/js/auth.user
     const uid = user.uid;
     loginBtn.style.display='none'
+    loginBtn2.style.display='none'
 
     // userinfo(user.uid)
     const unsub = onSnapshot(doc(db, "users", user.uid), (doc) => {
@@ -41,6 +45,7 @@ onAuthStateChanged(auth, (user) => {
     // ...
     
     logOutBtn.style.display='none'
+    logOutBtn2.style.display='none'
 
   }
 
@@ -52,6 +57,12 @@ logOutBtn.addEventListener('click', () => {
   signOut(auth)
   location.reload()
 })// LogOut
+
+logOutBtn2.addEventListener('click', () => {
+  signOut(auth)
+  location.reload()
+})// LogOut
+
 
 
 let icone_sacola =  document.querySelector('.icone-sacola')
@@ -85,3 +96,4 @@ if(localStorage.arrItens == '[]'){
 //     plus: false
 //   });
 // }
+

@@ -1,27 +1,3 @@
-.displayOff{
-    position: fixed;
-    bottom: -100%;
-}
-
-.displayOn{
-    position: fixed;
-    bottom: 0;
-}
-
-.info_arrow{
-    width: 2.5em;
-    background-color: black;
-    border-radius: 100%;
-    transition: all .5s;
-    position: fixed;
-    bottom: 2%;
-    right: 2%;
-    z-index: 3;
-}
-
-.arrow_tranform{
-    transform: rotate(180deg);
-}
 
 /* informações sobre a loja  */
 .info_zoom{
@@ -59,7 +35,7 @@
     justify-content: space-around;
     align-items: center;
     padding: .5em;
-    width: 100vw;
+    width: 100%;
     z-index: 0;
 }
 
@@ -78,10 +54,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     background-color: black;
     border-radius: 5px 5px 0 0;
 }
+
+.desktop_view_bar{
+    display: none;
+} 
+
+.login_desktop{
+    display: none;
+} 
+
+.logout_desktop{
+    display: none
+}
+
 /* informações sobre a loja  */
 
 .sobre{
@@ -91,4 +80,77 @@
     justify-content: center;
     align-items: center;
     user-select: none;
+}
+
+.payment{
+    width: 100%;
+    border-radius: 5px 5px 0 0 ;
+    user-select: none;
+}
+
+@media (min-width: 768px){
+    .links{
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px){
+    .footer{
+        flex-direction: row;
+        border-radius: unset;
+    }
+    
+    .payment{
+        width: 100%;
+        border-radius: unset;
+        user-select: none;
+    }
+
+    .footer_logo{
+        width: 90%;
+    }
+
+    .desktop_view_bar{
+        width: 100%;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px solid black;
+    }
+
+    .desktop_view_bar{
+        width: 100%;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .desktop_view_bar a{
+        text-decoration: none;
+        padding: 1em;
+        color:white;
+    }
+
+    .desktop_view_bar a:hover{
+        background-color: white;
+        color: black;
+    }
+
+    .navbar-toggler{
+        display: none;
+    }
+
+    .login_desktop{
+        display: flex;
+        background-color: black;
+    }
+
+    .side_menu{
+        display: none;
+    }
+
 }

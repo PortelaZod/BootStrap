@@ -25,7 +25,7 @@
           Grife Chic
         </a>
 
-        <div class="usuario-logado text-light">
+        <div class="usuario-logado text-light" style="user-select: none;">
 
         </div>
 
@@ -36,142 +36,163 @@
       <div class="container-fluid">
 
         <div class="navbar-brand">Moda Masculina</div>
+
+        <button class="login_desktop btn btn-dark">
+          Login
+        </button>
+
+        <button class="btn btn-danger logout_desktop">
+          Sair
+        </button>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
           aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
-          aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Grife Chic</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <div class="dropdown pt-2 pb-2">
-                  <a class=" dropdown-toggle text-dark text-decoration" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Camisetas
-                  </a>
+        <div class="side_menu">
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Grife Chic</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <div class="dropdown pt-2 pb-2">
+                    <a class=" dropdown-toggle text-dark text-decoration" href="#" role="button"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      Camisetas
+                    </a>
 
-                  <ul class="dropdown-menu" style="border: unset;">
-                    <li>
-                      <a class="dropdown-item" href="./moda-nacional.html">Camisetas Nacionais</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./moda_importada_malha_peruana.html">Camisetas importadas malha
-                        Peruana</a>
-                    </li>
-                    <!-- <li>
+                    <ul class="dropdown-menu" style="border: unset;">
+                      <li>
+                        <a class="dropdown-item" href="./moda-nacional.html">Camisetas Nacionais</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="./moda_importada_malha_peruana.html">Camisetas importadas malha
+                          Peruana</a>
+                      </li>
+                      <!-- <li>
                                           <a class="dropdown-item" href="#">Camisetas importadas malha Egípcia</a>
                                       </li> -->
-                    <li>
-                      <a class="dropdown-item" href="./moda_importada_40.01.html">Camisetas
-                        importadas fio 40.1</a>
-                    </li>
+                      <li>
+                        <a class="dropdown-item" href="./moda_importada_40.01.html">Camisetas
+                          importadas fio 40.1</a>
+                      </li>
 
-                    <li>
-                      <a class="dropdown-item" href="./camisetas_polo.html">
-                        Camisetas Polo</a>
-                    </li>
+                      <li>
+                        <a class="dropdown-item" href="./camisetas_polo.html">
+                          Camisetas Polo</a>
+                      </li>
 
-                  </ul>
-                </div>
+                    </ul>
+                  </div>
 
-              </li>
+                </li>
 
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="./moda_plus_size.html">Moda Plus Size</a>
-              </li>
-
-
-              <li class="nav-item">
-                <a class="dropdown-item" href="./bermudas_&_shorts.html">Bermudas & Shorts</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Moda Intima</a>
-              </li>
-          </div>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./moda_plus_size.html">Moda Plus Size</a>
+                </li>
 
 
-          <div class="links-contato container d-flex flex-column align-items-end">
+                <li class="nav-item">
+                  <a class="dropdown-item" href="./bermudas_&_shorts.html">Bermudas & Shorts</a>
+                </li>
 
-            <a href="https://wa.me/5592982134524" target="_blank" class="whats-ico">
-              <i class="fa-brands fa-whatsapp text-dark fs-1 mb-2 mt-2"></i>
-            </a>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">Moda Intima</a>
+                </li>
+            </div>
 
-            <a href="https://www.instagram.com/grifechicmoda/" target="_blank">
-              <i class="fa-brands fa-instagram text-dark fs-1 mb-2 mt-2"></i>
-            </a>
 
-          </div>
+            <div class="links-contato container d-flex flex-column align-items-end">
 
-          <div class="">
-            <a href="./login.html"><button type="button" class="btn btn-dark loginBtn-index ms-3">Login</button></a>
-          </div>
+              <a href="https://wa.me/5592982134524" target="_blank" class="whats-ico">
+                <i class="fa-brands fa-whatsapp text-dark fs-1 mb-2 mt-2"></i>
+              </a>
 
-          <div class="perfil-cliente container mb-2 mt-2 text-primary">
+              <a href="https://www.instagram.com/grifechicmoda/" target="_blank">
+                <i class="fa-brands fa-instagram text-dark fs-1 mb-2 mt-2"></i>
+              </a>
 
-          </div>
+            </div>
 
-          <div class="container mb-3">
-            <a class="nav-link text-danger logOutBtn" href="#">Sair</a>
+            <div class="">
+              <a href="./login.html"><button type="button" class="btn btn-dark loginBtn-index ms-3">Login</button></a>
+            </div>
+
+            <div class="perfil-cliente container mb-2 mt-2 text-primary">
+
+            </div>
+
+            <div class="container mb-3">
+              <a class="nav-link text-danger logOutBtn" href="#">Sair</a>
+            </div>
           </div>
         </div>
       </div>
     </nav>
+
+    <div class="desktop_view_bar">
+      <a href="">Moda Nacional</a>
+      <a href="">Importadas Malha Peruana</a>
+      <a href="">Importadas Fio 40.01</a>
+      <a href="">Camisetas Polo</a>
+      <a href="">Bermudas & Shorts</a>
+      <a href="">Moda Íntima</a>
+      <a href="">Moda Plus Size</a>
+    </div>
   </div><!-- Nav -->
 
-
   <!-- Carousel -->
-  <div id="carouselExampleCaptions" class="carousel slide z-0 mt-1 card" style="width:90%; margin: auto;">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-        aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-        aria-label="Slide 3"></button>
+  <div class="carousel_container">
+    <div id="carouselExampleCaptions" class="carousel slide z-0 mt-1 card" style="user-select: none;">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./Layout-imgs/carrousel 1.jpeg">
+          <div class="carousel-caption d-block p-1" style="background-color: rgba(0, 0, 0, 0.658);">
+            <h5>Do nacional ao importado</h5>
+            <p>Temos o melhor da Moda Masculina em Manaus.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./Layout-imgs/carrousel 2.jpeg" alt="...">
+          <div class="carousel-caption d-block p-1" style="background-color: rgba(0, 0, 0, 0.658);">
+            <h5>Loja 100% Virtual</h5>
+            <p>Entregamos para toda Manaus.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="./Layout-imgs/carrousel 3.jpeg" alt="...">
+          <div class="carousel-caption d-block p-1" style="background-color: rgba(0, 0, 0, 0.658);">
+            <h5>Compre com facilidade</h5>
+            <p>Monte sua sacola e escolha a melhor forma de pagamento e entrega com nosso atendimento.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="./Layout-imgs/carrousel 1.jpeg" class="d-block w-100" alt="..."
-          style="width: 380px; height: 380px; object-fit: cover;">
-        <div class="carousel-caption d-block p-1" style="background-color: rgba(0, 0, 0, 0.658);">
-          <h5>Do nacional ao importado</h5>
-          <p>Temos o melhor da Moda Masculina em Manaus.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./Layout-imgs/carrousel 2.jpeg" class="d-block w-100" alt="..."
-          style="width: 380px; height: 380px; object-fit: cover;">
-        <div class="carousel-caption d-block p-1" style="background-color: rgba(0, 0, 0, 0.658);">
-          <h5>Loja 100% Virtual</h5>
-          <p>Entregamos para toda Manaus.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="./Layout-imgs/carrousel 3.jpeg" class="d-block w-100" alt="..."
-          style="width: 380px; height: 380px; object-fit: cover;">
-        <div class="carousel-caption d-block p-1" style="background-color: rgba(0, 0, 0, 0.658);">
-          <h5>Compre com facilidade</h5>
-          <p>Monte sua sacola e escolha a melhor forma de pagamento e entrega com nosso atendimento.</p>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div><!-- Carousel -->
 
   <!-- cards -->
@@ -179,33 +200,33 @@
 
     <!-- Tamanhos -->
     <div class="main_card_mini">
-      <a href="./P.html" class="btn btn-dark" style="width: 100%;height: 100%;">
+      <a href="./P.html" class="btn btn-dark tam_container">
         <p class="fw-medium tams">P</p>
       </a>
-      <a href="" class="btn btn-dark" style="width: 100%;height: 100%;">
+      <a href="" class="btn btn-dark tam_container">
         <p class="fw-medium tams">M</p>
       </a>
-      <a href="" class="btn btn-dark" style="width: 100%;height: 100%;">
+      <a href="" class="btn btn-dark tam_container">
         <p class="fw-medium tams">G</p>
       </a>
-      <a href="" class="btn btn-dark" style="width: 100%;height: 100%;">
+      <a href="" class="btn btn-dark tam_container">
         <p class="fw-medium tams">GG</p>
       </a>
     </div><!-- Tamanhos -->
 
     <!-- Itens em Oferta -->
-    <div class="card main_card main_card_duplo">
+    <div class="card main_card_duplo">
       <img class="card-img-top main_card_duplo_img d-flex justify-content-center align-items-center"
         style="width: 100%;" src="./Layout-imgs/Promo Black FRIDAY.jpeg"></img>
-      <a href="#" class="text-light main_card_btn fw-medium">
+      <a href="#" class="text-light main_card_duplo_btn fw-medium">
         <p>Itens em Oferta</p>
       </a>
     </div><!-- Itens em Oferta -->
 
     <!-- nacionais -->
     <div class="card main_card">
-      <a href="./moda-nacional.html"><img src="./Layout-imgs/card Nacional.jpeg" class="card-img-top main_card_img"
-          style="width: 100%;"></a>
+      <a href="./moda-nacional.html" class="main_card_img"><img src="./Layout-imgs/card Nacional.jpeg"
+          class="card-img-top " style="width: 100%;height: 100%;"></a>
       <a href="./moda-nacional.html" class="text-light main_card_btn fw-medium">
         <p>Camisetas Nacionais</p>
       </a>
@@ -214,8 +235,8 @@
 
     <!-- Importada malha peruana -->
     <div class="card main_card">
-      <a href="./moda_importada_malha_peruana.html"><img src="./Layout-imgs/card Peruana.jpeg"
-          class="card-img-top main_card_img" style="width: 100%;"></a>
+      <a href="./moda_importada_malha_peruana.html" class="main_card_img"><img src="./Layout-imgs/card Peruana.jpeg"
+          class="card-img-top" style="width: 100%;"></a>
       <a href="./moda_importada_malha_peruana.html" class="text-light main_card_btn fw-medium">
         <p>Importadas malha Peruana</p>
       </a>
@@ -227,8 +248,8 @@
 
     <!-- importada fio 40.1 -->
     <div class="card main_card">
-      <a href="./moda_importada_40.01.html"><img src="./Layout-imgs/card 40.01.jpeg" class="card-img-top main_card_img"
-          style="width: 100%;"></a>
+      <a href="./moda_importada_40.01.html" class="main_card_img"><img src="./Layout-imgs/card 40.01.jpeg"
+          class="card-img-top" style="width: 100%;"></a>
       <a href="./moda_importada_40.01.html" class="text-light main_card_btn fw-medium">
         <p>Importadas fio 40.01</p>
       </a>
@@ -236,8 +257,8 @@
 
     <!-- Bermudas & Shorts -->
     <div class="card main_card">
-      <a href="./bermudas_&_shorts.html"><img src="./Layout-imgs/carrousel 4.jpeg" class="card-img-top main_card_img"
-          style="width: 100%;"></a>
+      <a href="./bermudas_&_shorts.html" class="main_card_img"><img src="./Layout-imgs/carrousel 4.jpeg"
+          class="card-img-top" style="width: 100%;"></a>
       <a href="./bermudas_&_shorts.html" class="text-light main_card_btn fw-medium">
         <p>Bermudas & Shorts</p>
       </a>
@@ -245,8 +266,8 @@
 
     <!-- Plus Size -->
     <div class="card main_card">
-      <a href="./moda_plus_size.html"><img src="./Layout-imgs/card plus size.jpeg" class="card-img-top main_card_img"
-          style="width: 100%;"></a>
+      <a href="./moda_plus_size.html" class="main_card_img"><img src="./Layout-imgs/card plus size.jpeg"
+          class="card-img-top" style="width: 100%;"></a>
       <a href="./moda_plus_size.html" class="text-light main_card_btn fw-medium">
         <p>Plus Size</p>
       </a>
@@ -254,20 +275,25 @@
 
     <!-- Camisetas Polo -->
     <div class="card main_card">
-      <a href="./camisetas_polo.html"><img src="./Layout-imgs/Camisetas_polo.jpeg" class="card-img-top main_card_img"
-          style="width: 100%;"></a>
+      <a href="./camisetas_polo.html" class="main_card_img"><img src="./Layout-imgs/Camisetas_polo.jpeg"
+          class="card-img-top" style="width: 100%;"></a>
       <a href="./camisetas_polo.html" class="text-light main_card_btn fw-medium">
         <p>Camisetas Polo</p>
       </a>
     </div><!-- Camisetas Polo -->
 
     <!-- Moda Intima -->
-    <div class="card main_card">
-      <a href="#"><img src="./Layout-imgs/card intima.jpg" class="card-img-top main_card_img" style="width: 100%;"></a>
+    <div class="card main_card moda_intima">
+      <a href="#" class="main_card_img"><img src="./Layout-imgs/card intima.jpg" class="card-img-top"
+          style="width: 100%;"></a>
       <a href="#" class="text-light main_card_btn fw-medium">
         <p>Moda Intima</p>
       </a>
     </div><!-- Moda Intima -->
+
+    <div class="side_bar_desktop">
+
+    </div>
 
   </div><!-- cards -->
 
@@ -285,12 +311,14 @@
 
 
   <!-- icon-sacola -->
-  <div class="icone-sacola btn position-fixed bottom-0 end-0 beating">
+  <div class="icone-sacola btn position-fixed bottom-0 end-0 beating z-2">
     <a href="./sacola.html"><i class="fa-solid fa-bag-shopping text-danger" style="font-size: 3rem;"></i></a>
   </div><!-- icon-sacola -->
 
-  <div class="footer">
-    <p style="text-align: center;margin: 0;user-select: none;" class="fs-5 fw-medium p-1 text-light">Grife Chic | Moda Masculina</p>
+  <div class="footer bg-dark">
+    <p style="text-align: center;margin: 0;user-select: none;" class="footer_logo fs-5 fw-medium p-1 text-light">Grife
+      Chic Moda
+      Masculina</p>
     <div class="sobre ">
       <ul class="text-light fs-6 sobre_texto p-1 m-0" style="list-style-type: none; text-align: center;width: 100%;">
         <li>Loja 100% Virtual.</li>
@@ -300,30 +328,25 @@
       </ul>
     </div>
 
-    <div class="links">
-      <a href="tel:+5592982134524"><img src="./Layout-imgs/Tel.png" width="32px" height="32px"></a>
-    
-      <a href="https://wa.me/5592982134524" target="_blank" >
-        <img src="./Layout-imgs/whats_green.png" width="32px" height="32px">
+    <div class="links p-1 z-0">
+      <a href="tel:+5592982134524"><img src="./Layout-imgs/Tel.png" width="28px" height="28px"></a>
+
+      <a href="https://wa.me/5592982134524" target="_blank">
+        <img src="./Layout-imgs/whats_green.png" width="28px" height="28px">
       </a>
-      
+
       <a href="https://www.instagram.com/grifechicmoda/" target="_blank">
-        <img src="./Layout-imgs/insta_color.png" width="32px" height="32px">
+        <img src="./Layout-imgs/insta_color.png" width="28px" height="28px">
       </a>
-      
+
     </div>
 
-    <div class="infos" style="width: 100%;">
-      <p class="entrega" style="cursor: pointer;">Entregas</p>
-      <p class="troca" style="cursor: pointer;">Trocas</p>
+    <div class="infos" style="width: 90%;">
+      <p class="entrega p-1" style="cursor: pointer;">Entregas</p>
+      <p class="troca p-1" style="cursor: pointer;">Trocas</p>
     </div>
 
-    <div class="payment" style="background-color: white;width: 100%;border-radius: 5px 5px 0 0 ;user-select: none;">
-
-      <div class="p-1" style="width: 100%; display: flex; flex-direction: row;justify-content: center;align-items: center;justify-content: space-around;">
-        <img src="./Layout-imgs/income.png" style="height: 32px;">
-      </div>
-
+    <div class="payment bg-light">
       <div class="payment1 p-1"
         style="width: 100%; display: flex; flex-direction: row;justify-content: center;align-items: center;justify-content: space-around;border-radius: 5px 5px 0 0 ;">
         <img src="./Layout-imgs/logo-visa-256.png" width="32px" height="32px">
@@ -334,15 +357,23 @@
       <div class="another_payments p-1"
         style="width: 100%; display: flex; flex-direction: row;justify-content: center;align-items: center;justify-content: space-around;">
         <img src="./Layout-imgs/Elo.png" width="42px" height="42px">
-        <img src="./Layout-imgs/logo-hipercard-256.png" width="42px" height="42px">
         <img src="./Layout-imgs/pix.png" style="height: 32px;">
+        <img src="./Layout-imgs/logo-hipercard-256.png" width="42px" height="42px">
+
       </div>
 
-      <div class="p-1" style="width: 100%; display: flex; flex-direction: row;justify-content: center;align-items: center;justify-content: space-around;">
+      <div class="p-1"
+        style="width: 100%; display: flex; flex-direction: row;justify-content: center;align-items: center;justify-content: space-around;">
         <img src="./Layout-imgs/credit-card.png" style="height: 32px;">
       </div>
     </div>
 
+  </div>
+
+  <div class="carregando beating"
+    style="width: 100%;height: 100vh;position: fixed;top: 0; left: 0; z-index: 3;display:flex;flex-direction: column; justify-content: center;align-items: center;background-color: white;">
+    <h1>Grife Chic</h1>
+    <p>Moda Masculina</p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

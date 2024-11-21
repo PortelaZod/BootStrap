@@ -1,3 +1,4 @@
+
 .whats-ico{
     animation: beating .5s infinite;
 }
@@ -103,8 +104,6 @@
     
 }
 
-
-
 img.item-img{
     width: 100%;
     height: 165px;
@@ -163,7 +162,7 @@ img.item-img{
 
 .main_card{
     width: 100%;
-    height: 150px;
+    height: 190px;
     margin: auto;
     position: relative;
     overflow: hidden;
@@ -176,6 +175,13 @@ img.item-img{
     object-position: center;
     transition: all .5s;
 }
+
+.main_card_img img{
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 
 .scaleZ{
     scale: 1.1;
@@ -209,10 +215,23 @@ img.item-img{
 .main_card_duplo{
     grid-column: 1/3;
     grid-row: 2/3;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .main_card_duplo_img{
     height:160px;
+}
+
+.main_card_duplo_btn{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    text-align: center;
 }
 
 .main_card_mini{
@@ -225,6 +244,10 @@ img.item-img{
     grid-row: 4/5;
 }
 
+.tam_container{
+    width: 100%;
+    height: 100%;
+}
 
 .tams{
     display: flex;
@@ -237,6 +260,29 @@ img.item-img{
 
 .carousel{
     overflow: hidden;
+    width:90%; 
+    margin: auto;
+}
+
+.carousel-inner{
+    height: 300px;
+    box-sizing: border-box;
+}
+
+.carousel-item{
+    width: 100%;
+    height: 300px;
+}
+
+.carousel-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.side_bar_desktop{
+    display: none;
 }
 
 @media (min-width: 375px){
@@ -269,3 +315,135 @@ img.item-img{
     }
 }
 
+@media (min-width: 768px){
+    .cards_home{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .main_card{
+        width: 100%;
+        height: 300px;
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .main_card_btn{
+        height: 100%;
+    }
+
+    .main_card_img{
+        height: 300px;
+    }
+
+    .main_card_img img{
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .main_card_duplo{
+        grid-column: 1/4;
+        grid-row: 1/2;
+    }
+    
+    .main_card_duplo_img{
+        height:100%;
+    }
+
+    .main_card_mini{
+        display: none;
+    }
+
+    .tam_container{
+        width: fit-content;
+        margin: auto;
+    }   
+
+    .moda_intima{
+        grid-column: 3/4;
+    }
+
+    .carousel{
+        width: 60%;
+    }
+
+    .carousel-inner{
+        width: 300px ;
+        height: 500px;
+    }
+    
+    .carousel-item{
+        width: 300px ;
+        height: 500px;
+    }
+}
+
+@media (min-width: 992px){
+    .cards_home{
+        grid-template-columns: repeat(4,1fr);
+    }
+
+    .main_card{
+        width: 100%;
+        height: 350px;
+    }
+
+    .main_card_img{
+        height: 350px;
+    }
+
+    .main_card_img img{
+        height: 100%;
+    }
+
+    .main_card_duplo{
+        grid-column: 1/5;
+        grid-row: 1/2;
+    }
+    
+    .main_card_duplo_img{
+        height:100%;
+    }
+
+    .carousel_container{
+        display: none;
+    }
+    /* .carousel-inner{
+        width: 300px ;
+        height: 300px;
+    }
+    
+    .carousel-item{
+        width: 300px ;
+        height: 300px;
+    } */
+
+    .side_bar_desktop{
+        display: block;
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .main_card_mini{
+        display: none;
+    }
+
+    .tam_container{
+        width: fit-content;
+        margin: auto;
+        height: fit-content;
+    }   
+
+    .moda_intima{
+        grid-column: 4/5;
+    }
+
+    .footer{
+        height: 150px;
+    }
+
+    .payment{
+        height: 150px;
+    }
+}
