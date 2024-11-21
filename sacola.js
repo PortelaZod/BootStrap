@@ -16,13 +16,20 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
 const db = getFirestore(app);
 
-let itens =''
-
 if (localStorage.arrItens) {
-    itens = JSON.parse(localStorage.arrItens)
+  let itens = JSON.parse(localStorage.arrItens)
+}else{
+    let itens = ""
 }
-else if(localStorage.arrItens) {
+
+let itens = ""
+
+if (itens == "") {
     
+    document.querySelector('.vazio').style.display = 'flex'
+    document.querySelector('.areaValor').style.visibility = 'hidden'
+  //  document.querySelector('.area-sacola').style.display = 'unset'//
+}else{
     document.querySelector('.vazio').style.display = 'none'
     document.querySelector('.areaValor').style.visibility = 'visible'
     document.querySelector('.area-sacola').style.display = 'unset'
