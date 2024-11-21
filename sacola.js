@@ -26,6 +26,8 @@ if (itens == "") {
     document.querySelector('.vazio').style.display = 'flex'
     document.querySelector('.areaValor').style.visibility = 'hidden'
   //  document.querySelector('.area-sacola').style.display = 'unset'//
+    document.querySelector('.carregando').style.display = 'none'
+    
 }else{
         document.querySelector('.carregando').style.display = 'none'
     document.querySelector('.vazio').style.display = 'none'
