@@ -16,12 +16,9 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
 const db = getFirestore(app);
 
-  let itens = JSON.parse(localStorage.arrItens)
-    document.querySelector('.carregando').style.display = 'none'
+if(localStorage.arrItens){
     document.querySelector('.vazio').style.display = 'none'
-    document.querySelector('.areaValor').style.visibility = 'visible'
-    document.querySelector('.area-sacola').style.display = 'unset'
-
+    let itens = JSON.parse(localStorage.arrItens)
     itens.forEach(e => {
 
         let itemCardSacola = document.querySelector('.item-card-sacola').cloneNode(true)
@@ -120,6 +117,16 @@ const db = getFirestore(app);
             }
         });
     })
+}else{
+        document.querySelector('.carregando').style.display = 'none'
+        document.querySelector('.areaValor').style.visibility = 'hidden'
+        document.querySelector('.vazio').style.display = 'flex'
+        document.querySelector('.area-sacola').style.display = 'none'
+}
+
+if(JSON.parse(localStorage.arrItens)==''){
+    localStorage.removeItem('arrItens')
+    document.querySelector('.areaValor').style.visibility = 'hidden'
 }
 
 let enviarPedido = async (e) => {
@@ -137,7 +144,6 @@ let enviarPedido = async (e) => {
     });
 }
 
-
 //animação de carregamento
 function carregando(){
     setTimeout(() => {
@@ -145,12 +151,10 @@ function carregando(){
     }, 1000);
 }
 
-let imgs = document.querySelectorAll('.item-img-sacola')
-imgs.forEach(e=>{
-    e.addEventListener('load',()=>{
-        carregando()
-    })
+document.addEventListener('DOMContentLoaded',()=>{
+    carregando()
 })//animação de carregamento
+
 
 // //animção enviando pedido
 // function enviando(x){

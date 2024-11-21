@@ -73,3 +73,10 @@ x.forEach(e =>
         document.querySelector('.img_modal').style.scale = '0'
     }))// fechar zoom Modal nas Imagens
 // Efeito Modal nas Imagens
+
+document.addEventListener('DOMContentLoaded',()=>{
+    setTimeout(() => {
+        document.querySelector('.carregando').style.display='none'
+    }, 1000);
+    
+})

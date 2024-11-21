@@ -12,6 +12,18 @@
     }
 }
 
+.desktop_view_bar{
+    display: none;
+} 
+
+.login_desktop{
+    display: none;
+} 
+
+.logout_desktop{
+    display: none
+}
+
 .usuarioCriado{
     display: none;
 }
@@ -68,11 +80,10 @@
     position: fixed;
     top: 0;
     right: 0;
-    display: none;
 }
 
 .areaValor{
-    visibility: hidden;
+    display: none;
 }
 
 .card-oculto{
@@ -441,6 +452,36 @@ img.item-img{
         grid-row: 2/3;
     }
 
+    .desktop_view_bar{
+        width: 100%;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px solid black;
+    }
+
+    .desktop_view_bar{
+        width: 100%;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .desktop_view_bar a{
+        text-decoration: none;
+        padding: 1em;
+        color:white;
+    }
+
+    .desktop_view_bar a:hover{
+        background-color: white;
+        color: black;
+    }
+
     .main_card_mini{
         display: none;
     }
@@ -462,4 +503,18 @@ img.item-img{
     .payment{
         height: 150px;
     }
+
+    .navbar-toggler{
+        display: none;
+    }
+
+    .login_desktop{
+        display: flex;
+        background-color: black;
+    }
+
+    .side_menu{
+        display: none;
+    }
+
 }

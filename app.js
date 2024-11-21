@@ -15,7 +15,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
 const db = getFirestore(app);
 
-
 const loginBtn = document.querySelector('.loginBtn-index')
 const loginBtn2 = document.querySelector('.login_desktop')
 const logOutBtn = document.querySelector('.logOutBtn')
@@ -64,16 +63,6 @@ logOutBtn2.addEventListener('click', () => {
 })// LogOut
 
 
-
-// let icone_sacola =  document.querySelector('.icone-sacola')
-// if(localStorage.arrItens == '[]'){
-//   icone_sacola.style.display='none'
-// }else if(localStorage.arrItens){
-//   icone_sacola.style.display='flex'
-// }else{
-//   icone_sacola.style.display='none'
-// }
-
 // const NACIONAL = await getDocs(collection(db,'BERMUDAS_E_SHORTS'));
 // NACIONAL.forEach(  doc => {
   
@@ -83,6 +72,7 @@ logOutBtn2.addEventListener('click', () => {
 //   console.log(itens)
 
 // });
+
 // function add_db(x){
 
 //   setDoc(doc(db, "grife_chic", x.cod), {
