@@ -16,18 +16,17 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
 const db = getFirestore(app);
 
-let itens = JSON.parse(localStorage.getItem('arrItens'))
+let itens =''
 
-if (itens == '') {
-    document.querySelector('.vazio').style.display = 'flex'
-    document.querySelector('.areaValor').style.visibility = 'hidden'
-    document.querySelector('.carregando').style.display='none'
+if (localStorage.arrItens) {
+    itens = JSON.parse(localStorage.arrItens)
+}
+else if(localStorage.arrItens) {
     
-} else {
-
     document.querySelector('.vazio').style.display = 'none'
     document.querySelector('.areaValor').style.visibility = 'visible'
     document.querySelector('.area-sacola').style.display = 'unset'
+
     itens.forEach(e => {
 
         let itemCardSacola = document.querySelector('.item-card-sacola').cloneNode(true)

@@ -30,21 +30,21 @@ onAuthStateChanged(auth, (user) => {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/auth.user
     const uid = user.uid;
-    loginBtn.style.display='none'
+    // loginBtn.style.display='none'
     loginBtn2.style.display='none'
 
     // userinfo(user.uid)
     const unsub = onSnapshot(doc(db, "users", user.uid), (doc) => {
       const data = doc.data()
-      usuarioLogado.innerHTML=`Olá ${data.nome}`
-      perfilCliente.innerHTML=data.nome +' '+ data.sobrenome
+      usuarioLogado.innerHTML = data.nome
+      perfilCliente.innerHTML = data.nome +' '+ data.sobrenome
     });
     // ...
   } else {
     // User is signed out
     // ...
     
-    logOutBtn.style.display='none'
+    // logOutBtn.style.display='none'
     logOutBtn2.style.display='none'
 
   }
@@ -52,11 +52,11 @@ onAuthStateChanged(auth, (user) => {
 });
 //Enquanto Logado
 
-// LogOut
-logOutBtn.addEventListener('click', () => {
-  signOut(auth)
-  location.reload()
-})// LogOut
+// // LogOut
+// logOutBtn.addEventListener('click', () => {
+//   signOut(auth)
+//   location.reload()
+// })// LogOut
 
 logOutBtn2.addEventListener('click', () => {
   signOut(auth)
@@ -65,14 +65,14 @@ logOutBtn2.addEventListener('click', () => {
 
 
 
-let icone_sacola =  document.querySelector('.icone-sacola')
-if(localStorage.arrItens == '[]'){
-  icone_sacola.style.display='none'
-}else if(localStorage.arrItens){
-  icone_sacola.style.display='flex'
-}else{
-  icone_sacola.style.display='none'
-}
+// let icone_sacola =  document.querySelector('.icone-sacola')
+// if(localStorage.arrItens == '[]'){
+//   icone_sacola.style.display='none'
+// }else if(localStorage.arrItens){
+//   icone_sacola.style.display='flex'
+// }else{
+//   icone_sacola.style.display='none'
+// }
 
 // const NACIONAL = await getDocs(collection(db,'BERMUDAS_E_SHORTS'));
 // NACIONAL.forEach(  doc => {

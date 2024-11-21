@@ -28,7 +28,8 @@ const login = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        history.back()
+        // history.back()
+        location = './index.html'
         // ...
       })
       .catch((error) => {
