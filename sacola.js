@@ -17,11 +17,8 @@ const auth = getAuth(app)
 const db = getFirestore(app);
 
 if (localStorage.arrItens) {
-  let itens = JSON.parse(localStorage.arrItens)
-}else{
-    let itens = ""
+   itens = JSON.parse(localStorage.arrItens)
 }
-
 let itens = ""
 
 if (itens == "") {
@@ -30,6 +27,7 @@ if (itens == "") {
     document.querySelector('.areaValor').style.visibility = 'hidden'
   //  document.querySelector('.area-sacola').style.display = 'unset'//
 }else{
+        document.querySelector('.carregando').style.display = 'none'
     document.querySelector('.vazio').style.display = 'none'
     document.querySelector('.areaValor').style.visibility = 'visible'
     document.querySelector('.area-sacola').style.display = 'unset'
