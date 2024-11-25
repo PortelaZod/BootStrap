@@ -1,5 +1,9 @@
 
 /* informações sobre a loja  */
+.carousel_desktop{
+    display: none;
+}
+
 .info_zoom{
     position: fixed;
     top: 0;
@@ -94,4 +98,11 @@
         user-select: none;
     }
 
+    .footer_logo{
+        width: 100%;
+    }
+
+    .carousel_desktop{
+        display: flex;
+    }
 }

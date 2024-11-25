@@ -30,7 +30,7 @@
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
 
-                <div class="navbar-brand">Pedidos Finalizados</div>
+                <div class="navbar-brand">Pedidos Cancelados</div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -52,16 +52,16 @@
     <!-- Nav -->
 
     <div class="modelos d-none">
-        <div class="container pedido mb-3 card" style="max-width: fit-content;">
+        <div class="container pedido card" style="max-width: fit-content;">
             <div class="container p-3 dados_cliente">
-                <h5 class="card-title num-pedido text-primary">Pedido #0000</h5>
-                <p class="data_pedido"></p>
-                <p class="nome-cliente">Nome Cliente</p>
-                <p class="tel-cliente">Tel: 5592999999999</p>
-                <p class="endereco">Endereço: Rua I n10, alvorada 2, 99999999</p>
-                <p class="card-text valor-pedido">R$00.00</p>
+                <h5 class="card-title num-pedido text-danger">Pedido #0000</h5>
+                <p class="data_pedido "></p>
+                <p class="nome-cliente ">Nome Cliente</p>
+                <p class="tel-cliente ">Tel: 5592999999999</p>
+                <p class="endereco ">Endereço: Rua I n10, alvorada 2, 99999999</p>
+                <p class="card-text valor-pedido ">R$00.00</p>
                 <p class="qtd_itens"></p>
-                <p class="item text-primary" style="cursor: pointer;"></p>
+                <p class="item text-danger" style="cursor: pointer;"></p>
             </div>
         </div>
 
@@ -84,7 +84,7 @@
         crossorigin="anonymous"></script>
 
     <script type="module" src="app.js"></script>
-    <script type="module" src="pedidos_finalizados.js"></script>
+    <script type="module" src="pedidos_cancelado.js"></script>
 </body>
 
 </html>

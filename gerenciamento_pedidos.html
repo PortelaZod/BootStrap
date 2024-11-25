@@ -23,76 +23,36 @@
                         class="d-inline-block align-text-center">
                     Grife Chic | Área Adm
                 </a>
-
-                <div class="usuario-logado text-light">
-
-                </div>
-
+                <div class="usuario-logado text-light"></div>
             </div>
         </nav>
 
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
 
-                <div class="navbar-brand">Moda Masculina</div>
+                <div class="navbar-brand">Gerenciamento de Pedidos</div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
-                    aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Grife Chic</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page"
-                                    href="gerenciamento_pedidos.html">Gerenciamento de Pedidos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active link-primary" aria-current="page"
-                                    href="pedidos_finalizados.html">Pedidos Finalizados</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active link-danger" aria-current="page"
-                                    href="pedidos_cancelados.html">Pedidos Cancelados</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="additem.html">Adicionar um item ao
-                                    banco de dados</a>
-                            </li>
-                    </div>
 
+                <div class="" style="position: absolute; right: 1em;flex-direction: row;">
+                    <a href="./login_adm.html"><button class="login_desktop btn btn-dark">
+                      Entrar
+                    </button></a>
+        
+                    <button class="btn btn-danger logout_desktop">
+                      Sair
+                    </button>    
+                  </div>
 
-                    <div class="links-contato container d-flex flex-column align-items-end">
-
-
-
-
-                    </div>
-
-                    <div class="">
-                        <a href="./login.html"><button type="button"
-                                class="btn btn-dark loginBtn-index ms-3">Login</button></a>
-                    </div>
-
-                    <div class="perfil-cliente container mb-2 mt-2 text-primary">
-
-                    </div>
-
-                    <div class="container mb-3">
-                        <a class="nav-link text-danger logOutBtn" href="#">Sair</a>
-                    </div>
-                </div>
             </div>
         </nav>
     </div>
     <!-- Nav -->
 
     <div class="modelos d-none">
-        <div class="container pedido mb-3 card" style="max-width: fit-content;">
+        <div class="container pedido card" style="max-width: fit-content;">
             <div class="container p-3 dados_cliente">
                 <h5 class="card-title num-pedido">Pedido #0000</h5>
                 <p class="data_pedido"></p>
@@ -128,7 +88,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="adm.js"></script>
     <script type="module" src="gerenciamento_pedidos.js"></script>
 </body>
 

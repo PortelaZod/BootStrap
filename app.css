@@ -112,14 +112,6 @@
     padding: .3em;
 }
 
-.itens_area_oculta{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    column-gap: .3em;
-    row-gap: .3em;
-    padding: .3em;
-}
-
 .pos_carregado,.nome_pos_carregado,.preco_pos_carregado,.tam_pos_carregado{
     display: none;
 }
@@ -517,6 +509,28 @@ img.item-img{
         display: none;
     }
 
+    .itens-area{
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(4,250px);
+        gap: .5em;
+    }
+
+    .filtros_tam{
+        height: 100%;
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .zoom{
+        display: none;
+    }
+
+}
+
+
+.danone{
+    display: none;
 }
 
 
@@ -528,4 +542,10 @@ img.item-img{
     align-items: center;
     width: fit-content;
     margin: auto;
+}
+
+.area_pedidos{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: .5em;
 }
