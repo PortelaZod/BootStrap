@@ -518,3 +518,14 @@ img.item-img{
     }
 
 }
+
+
+.menu_adm{
+    display: grid;
+    grid-template-columns: repeat(2,300px);
+    gap: .5em;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+}
